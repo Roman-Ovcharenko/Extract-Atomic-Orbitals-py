@@ -39,7 +39,8 @@ class RedOrbital(object):
             sign = np.sign(orbitals[self.avg_list[0]].cf_rad[iexp])
             for iorb in range(self.num_deg_orb):
                 cf_avg[iexp] = (cf_avg[iexp] 
-                                + sign * abs(orbitals[self.avg_list[iorb]].cf_rad[iexp]))
+                                + sign * abs(orbitals[self.avg_list[iorb]].cf_rad[iexp]) 
+                                / orbitals[self.avg_list[iorb]].norm_avg)
             cf_avg[iexp] = cf_avg[iexp] / self.num_deg_orb
         return cf_avg
 

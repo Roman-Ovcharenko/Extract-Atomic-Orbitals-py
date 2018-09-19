@@ -15,7 +15,7 @@ from others import dfactorial as dfact
 class Orbital(object):
 
     def __init__(self, file_coef, energy, parity, jj, mj, ll, bas, iorb, num_orb_ger, at_symb,
-                cf_La, cf_Lb, nn):
+                cf_La, cf_Lb, nn, wrong_norm_orbitals):
         self.file_coef = file_coef
         self.energy = energy
         self.parity = parity
@@ -35,7 +35,7 @@ class Orbital(object):
         phi_up = reconstruct_rad_orbital(cf_rad_up, self.exps, self.Rc, self.ll)
         phi_down = reconstruct_rad_orbital(cf_rad_down, self.exps, self.Rc, self.ll)
         self.phi = reconstruct_rad_orbital(self.cf_rad, self.exps, self.Rc, self.ll)
-        self._rad_orbitals_printout(phi_up, phi_down, self.phi)
+        self.norm_avg = self._rad_orbitals_printout(phi_up, phi_down, self.phi, wrong_norm_orbitals)
         return None
 
     def _get_radial_grid(self):
@@ -187,7 +187,7 @@ class Orbital(object):
                                                              + abs(cf_rad_down[iexp] / cl_down)))
         return cf_rad
 
-    def _rad_orbitals_printout(self, phi_up, phi_down, phi_avg):
+    def _rad_orbitals_printout(self, phi_up, phi_down, phi_avg, wrong_norm_orbitals):
         norm_up = integrate(self.Rc, phi_up, phi_up)
         norm_down = integrate(self.Rc, phi_down, phi_down)
         norm_avg = integrate(self.Rc, phi_avg, phi_avg)
@@ -196,6 +196,10 @@ class Orbital(object):
         cl_up = clebsch(self.jj, self.mj, self.ll, int(self.mj-beta), abs(beta), beta)
         beta = -0.5
         cl_down = clebsch(self.jj, self.mj, self.ll, int(self.mj-beta), abs(beta), beta)
+
+        if ((abs(norm_up - cl_up**2) > 0.1*cl_up**2+0.01) 
+            or (abs(norm_down - cl_down**2) > 0.1*cl_down**2+0.01)):
+            wrong_norm_orbitals.append(self.orb_sym)
 
         if self.iorb == 0:
             print("  iorb       orb_sym       norm-up   clebsch-up^2   norm-down"
@@ -213,7 +217,7 @@ class Orbital(object):
                 f_down.write("  {:22.16e}    {:22.16e}\n".format(self.Rc[ir], phi_down[ir]))
                 f_up.write("  {:22.16e}    {:22.16e}\n".format(self.Rc[ir], phi_up[ir]))
                 f_avg.write("  {:22.16e}    {:22.16e}\n".format(self.Rc[ir], phi_avg[ir]))
-        return None
+        return norm_avg
 
     def _overlap_dec_basis(self, lxx, lyy, lzz, mll, gamma2, lx, ly, lz, ml, gamma):
         lsum = lx + ly + lz

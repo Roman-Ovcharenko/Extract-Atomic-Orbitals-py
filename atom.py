@@ -5,7 +5,7 @@ from others import dfactorial as dfact
 
 class Atom(object):
 
-    def __init__(self, file_prop, file_coef, bas, at_symb):
+    def __init__(self, file_prop, file_coef, bas, at_symb,  wrong_norm_orbitals):
         self.file_prop = file_prop
         self.file_coef = file_coef
         self.at_symb = at_symb
@@ -17,7 +17,7 @@ class Atom(object):
             self.orbitals.append(orbital.Orbital(self.file_coef, energies[iorb], parities[iorb], 
                                                  jjs[iorb], mjs[iorb], lls[iorb], self.bas, iorb, 
                                                  self.num_orb_ger, self.at_symb, cfs_La[iorb],
-                                                 cfs_Lb[iorb], nns[iorb]))
+                                                 cfs_Lb[iorb], nns[iorb], wrong_norm_orbitals))
         orb_avg = self._average_over_mj()
         self.num_red_orb = len(orb_avg)
         self.red_orbitals = []

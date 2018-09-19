@@ -20,6 +20,7 @@ for dir_ in root_tot:
 print("List of atoms is:\n{}".format(root))
 print()
 
+wrong_norm_orbitals = []
 tot_time_begin = time.time()
 for at_symb in root:
     time_begin = time.time()
@@ -33,13 +34,17 @@ for at_symb in root:
     file_ElSA = at_symb + "-dyall-v4z.h"
     bas = basis.Basis(file_prop, file_exp, at_symb)
     bas.printout()
-    at = atom.Atom(file_prop, file_coef, bas, at_symb)
+    at = atom.Atom(file_prop, file_coef, bas, at_symb, wrong_norm_orbitals)
     at.printout()
     at.print_ElSA_file(file_ElSA)
     os.chdir("..")
     time_end = time.time()
     others.print_time(time_end - time_begin)
 print("{:=^80s}\n".format(" END "))                           
+print("The number of orbitals with wrong norm: {}:".format(len(wrong_norm_orbitals)))
+for orb in wrong_norm_orbitals:
+    print(orb)
+print()
 tot_time_end = time.time()
 others.print_time(tot_time_end - tot_time_begin)
 
