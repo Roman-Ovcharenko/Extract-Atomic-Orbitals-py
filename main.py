@@ -20,6 +20,7 @@ for dir_ in root_tot:
 print("List of atoms is:\n{}".format(root))
 print()
 
+tot_time_begin = time.time()
 for at_symb in root:
     time_begin = time.time()
     os.chdir(at_symb+"/")
@@ -38,6 +39,10 @@ for at_symb in root:
     os.chdir("..")
     time_end = time.time()
     others.print_time(time_end - time_begin)
+print("{:=^80s}\n".format(" END "))                           
+tot_time_end = time.time()
+others.print_time(tot_time_end - tot_time_begin)
+
 
 
 
