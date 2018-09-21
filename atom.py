@@ -3,18 +3,32 @@ import red_orbital
 from others import convert_to_float
 from others import dfactorial as dfact
 
+##################################################################################################
+# The Atom object represents an atomic species
+# self.file_prop - Dirac output file containing results of calculation and wave function 
+# coefficients 
+#
+# self.at_symb - symbolic representation of atomic species
+# self.bas - the basis set corresponding to the current atom and taken from the file_exp file
+# self.num_orb_ger - a number of the gerade orbitals
+# self.num_orb_ung - a number of the ungerade orbitals
+# self.num_orb - a total number of atomic orbitals
+# self.orbitals - a list of atomic orbitals related to the current atomic species
+# self.num_red_orb - a number of the distinct radial atomic orbitals which have been obtained from 
+# the original self.orbitals by averaging over spin up, spin down and mj quantum numbers
+# self.red_orbitals - a list of the radial atomic orbitals
+###################################################################################################
 class Atom(object):
 
-    def __init__(self, file_prop, file_coef, bas, at_symb,  wrong_norm_orbitals):
+    def __init__(self, file_prop, bas, at_symb,  wrong_norm_orbitals):
         self.file_prop = file_prop
-        self.file_coef = file_coef
         self.at_symb = at_symb
         self.bas = bas
         (energies, jjs, lls, mjs, nns, parities, 
          self.num_orb_ger, self.num_orb_ung, self.num_orb, cfs_La, cfs_Lb) = self._get_param()
         self.orbitals = []
         for iorb in range(self.num_orb):
-            self.orbitals.append(orbital.Orbital(self.file_coef, energies[iorb], parities[iorb], 
+            self.orbitals.append(orbital.Orbital(self.file_prop, energies[iorb], parities[iorb], 
                                                  jjs[iorb], mjs[iorb], lls[iorb], self.bas, iorb, 
                                                  self.num_orb_ger, self.at_symb, cfs_La[iorb],
                                                  cfs_Lb[iorb], nns[iorb], wrong_norm_orbitals))
@@ -26,6 +40,9 @@ class Atom(object):
                                                             orb_avg[irorb], self.at_symb, bas))
         return None
 
+###################################################################################################
+# Print to the screen the detailed information about a given atomic species
+###################################################################################################
     def printout(self):
         print("\nATOM OUTPUT")
         print("Total number of orbitals: {}".format(self.num_orb))
@@ -52,21 +69,9 @@ class Atom(object):
         print("{}\n".format("-"*80))
         return None
 
-    def _get_ll(self, jj, parities):
-        ll = []
-        for iorb in range(self.num_orb):
-            l_minus = int(jj[iorb] - 0.5)
-            l_plus = int(jj[iorb] + 0.5)
-            if parities[iorb] == "gerade" and l_minus % 2 == 0:
-                ll.append(l_minus)
-            elif parities[iorb] == "gerade" and l_plus % 2 == 0:
-                ll.append(l_plus)
-            elif parities[iorb] == "ungerade" and l_minus % 2 != 0:
-                ll.append(l_minus)
-            elif parities[iorb] == "ungerade" and l_plus % 2 != 0:
-                ll.append(l_plus)
-        return ll
-
+###################################################################################################
+# Print detailed atomic information in the format adapted to the ElSA code
+###################################################################################################
     def print_ElSA_file(self, file_):
         ll_max = self._get_ll_max()
         f = open(file_, "w+")
@@ -129,6 +134,9 @@ class Atom(object):
         f.close()
         return None
 
+##################################################################################################
+# Read atomic parameters from the Dirac output file
+##################################################################################################
     def _get_param(self):
         energies_ger = []
         energies_ung = []
@@ -184,6 +192,9 @@ class Atom(object):
         return (energies, jjs, lls, mjs, nns, parities, num_orb_ger, 
                 num_orb_ung, num_orb, cfs_La, cfs_Lb)
 
+##################################################################################################
+# Guess n quantum numbers basing on the lists of j, l, mj and energies
+##################################################################################################
     def _get_nn(self, jjs, lls, mjs, energies):
         if len(mjs) == 0:
             return []
@@ -200,6 +211,9 @@ class Atom(object):
             nns.append(lls[iorb] + 1 + del_nn[iorb])
         return nns
 
+##################################################################################################
+# Define the l orbital number based on the largest contribution to the norm of atomic orbital
+##################################################################################################
     def _get_ll(self, parity, cf_La, cf_Lb):
         if parity == "gerade":
             ll_list = [0, 2, 4]
@@ -218,6 +232,10 @@ class Atom(object):
             raise Exception("ll_cur was not assigned")
         return ll_cur
 
+##################################################################################################
+# Estimate the contribution of coefficients with given ltot orbital quantum number to the total 
+# norm of the orbital
+##################################################################################################
     def _get_contrib(self, ltot, beta, cf_La, cf_Lb): 
         eps = 1.0e-10
         if abs(beta - 0.5) < eps:
@@ -234,6 +252,9 @@ class Atom(object):
             sum_ = sum_ + dens_mx * overlap
         return sum_
 
+##################################################################################################
+# Read wave function coefficients corresponding to each atomic orbital
+##################################################################################################
     def _get_coef(self, parity, iorb, energy):
         epsilon = float(2.0e-11)
         La = [complex(0.0, 0.0) for ibas in range(self.bas.size)]
@@ -241,7 +262,7 @@ class Atom(object):
         ival = -1
         nval = iorb 
 
-        with open(self.file_coef) as f:
+        with open(self.file_prop) as f:
             while True:
                 line = f.readline()
                 if (parity == "gerade") and ("Fermion ircop E1g" in line):
@@ -284,11 +305,17 @@ class Atom(object):
 
         return La, Lb
 
+##################################################################################################
+# The sign of the specific mj is assigned according to the Dirac output file
+##################################################################################################
     def _assign_sign(self, mjs):
         for i in range(len(mjs)):
             mjs[i] = mjs[i] * (-1.0)**int(mjs[i]-0.5)
         return None
 
+##################################################################################################
+# Read the number of orbitals with the specified parity and a list of mj quantum numbers
+##################################################################################################
     def _get_num_orb(self, f, parity):
         line_sum = ""
         line = f.readline()
@@ -306,6 +333,9 @@ class Atom(object):
         else:
             return 0, [], []
 
+##################################################################################################
+# Read a list of orbital energies
+##################################################################################################
     def _get_energies(self, f, num_orb):
         energies = []
         line = f.readline()
@@ -318,6 +348,13 @@ class Atom(object):
                 num = num + 1
         return energies
 
+##################################################################################################
+# Guess the j quantum number basing on the given l and mj quantum numbers and orbital energies 
+# Here we assume that: 
+# - l quantum numbers are correct
+# - all orbitals with the same j and different mj have approximately the same (close) energies
+# - the j and l quantum numbers are compatible
+##################################################################################################
     def _get_jj(self, mjs, energies, lls):
         if len(mjs) == 0:
             return []
@@ -325,6 +362,8 @@ class Atom(object):
         jjs = [0.0 for i in mjs]
         if_taken = [False for i in mjs]
         jj_max = max(mjs)
+# if the maximum j quantum number is 0.5 then all orbitals have j equals 0.5 unless this value is 
+# incompatible with the l quantum number
         if (jj_max - 0.5 < _eps):
             jj_cur = 0.5
             for i in range(len(mjs)):
@@ -345,6 +384,7 @@ class Atom(object):
                     eng_cur, index_cur, if_found = self._get_closest_energy(jj_cur, mj_cur,
                                                                             if_taken, energies,
                                                                             mjs, eng_prev, lls)
+# if the proper orbital was not found then just jump to the next trial mj
                     if not if_found:
                         mj_cur = mj_cur - 1.0
                         continue
@@ -353,12 +393,20 @@ class Atom(object):
                     mj_cur = mj_cur - 1.0
                 jj_cur = self._decrease_jj_cur(jj_cur, mjs, if_taken, lls)
 
+# For all orbitals which were not considered at the previous step we choose the smallest j 
+# quantum number compatible with its l quantum number
         for i in range(len(if_taken)):
             if not if_taken[i]:
                 jj_cur = lls[i] - 0.5
                 self._change_jj(jjs, if_taken, jj_cur, i)
         return jjs
 
+##################################################################################################
+# Get energy and index of any orbital with: 
+# - mj == j
+# - not considered yet
+# - compatible with l quantum number
+##################################################################################################
     def _get_energy(self, jj_cur, mjs, if_taken, energies, lls) :
         _eps = 1.0e-6
         for i in range(len(mjs)-1, -1, -1):
@@ -371,6 +419,9 @@ class Atom(object):
         raise Exception("All energies for given jj_cur are already taken")
         return None
 
+##################################################################################################
+# Check whether j and l quantum numbers are compatible with each other
+##################################################################################################
     def _if_compatible_ll(self, jj_cur, ll):
         _eps = 1.0e-6
         if ((abs(jj_cur - (ll + 0.5)) < _eps) 
@@ -379,6 +430,12 @@ class Atom(object):
         else:
             return False
 
+##################################################################################################
+# Find the closest to the given "eng_prev" energy under the following conditions:
+# - with given mj
+# - which is not considered yet
+# - for which the current guessed j is compatible with the l quantum number
+##################################################################################################
     def _get_closest_energy(self, jj_cur, mj_cur, if_taken, energies, mjs, eng_prev, lls):
         _eps = 1.0e-6
         eps_eng = 1000.0
@@ -399,11 +456,20 @@ class Atom(object):
             if_found = True
         return eng_index, index, if_found
 
+##################################################################################################
+# Attribute given orbital to specific j quantum number
+##################################################################################################
     def _change_jj(self, jjs, if_taken, jj_cur, index):
         jjs[index] = jj_cur
         if_taken[index] = True
         return None
 
+##################################################################################################
+# Decreas the trial j number only if all orbitals under the following conditions are alredy taken:
+# - mj == j
+# - not considered yet
+# - trial j and l are compatible 
+##################################################################################################
     def _decrease_jj_cur(self, jj_cur, mjs, if_taken, lls):
         _eps = 1.0e-6
         for i in range(len(mjs)-1, -1, -1):
@@ -413,6 +479,11 @@ class Atom(object):
                 return jj_cur
         return jj_cur - 1.0
 
+##################################################################################################
+# Create a list of orbitals with different n, l or j quantum numbers. Each entry of this list 
+# contains a list of orbitals with the same n, l and j quantum numbers but different mj.
+# Afterwards the orbitals with the same n, l and j quantum numbers will be averaged over mj
+##################################################################################################
     def _average_over_mj(self):
         orb_avg = []
         if_taken = [False for iorb in range(self.num_orb)]
@@ -434,6 +505,9 @@ class Atom(object):
             orb_avg.append(orb_cur_avg)
         return orb_avg
 
+##################################################################################################
+# Find the maximum l quantum number attributed to the given atom
+##################################################################################################
     def _get_ll_max(self):
         ll_max = -1
         for iorb in range(self.num_red_orb):

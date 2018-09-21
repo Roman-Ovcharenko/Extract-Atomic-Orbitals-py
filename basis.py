@@ -1,6 +1,18 @@
 from others import get_line
 from others import parse_orb_symm
 
+##################################################################################################
+# The Basis object represents a Cartesian basis set specific for each atomic species. 
+# This basis set is read from the basis set containing Dirac file.
+#
+# self.at_symb - symbolic representation of an atomic species
+# self.exps - Different basis set exponents for each orbital symmetry l  
+# self.size - the total size of the Cartesian basis set
+# self.symm - irreducible representation of the point symmetry group for each basis function
+# self.orb_symm - orbital symmetry for each basis function
+# self.exp - specific exponent for each basis function
+# self.lx, self.ly, self.lz, self.tot - orbital quantum numbers for each basis function
+##################################################################################################
 class Basis(object):
 
     _bohr_AA = float(0.529177249)
@@ -14,6 +26,9 @@ class Basis(object):
          self.lx, self.ly, self.lz, self.ltot) = self._gen_basis(file_prop, sizes_L, 
                                                              sizes_symb_L, sizes_S)
 
+##################################################################################################
+# Print detailed information about basis set for the given atomic species to the screen
+##################################################################################################
     def printout(self):
         print("BASIS OUTPUT")
         print("Basis set size (size): {}".format(self.size))
@@ -26,6 +41,9 @@ class Basis(object):
         print("{}\n".format("-"*80))
         return None
 
+##################################################################################################
+# Read a number of basis functions belonging to each point symmetry group 
+##################################################################################################
     def _get_size(self, str_, file_):
         with open(file_) as fp:
             for line in fp:
@@ -39,6 +57,9 @@ class Basis(object):
                      int(B3g), int(Au)], 
                     ["Ag", "B3u", "B2u", "B1g", "B1u", "B2g", "B3g", "Au"])
 
+##################################################################################################
+# Read basis set exponents for each orbital symmetry from the basis set Dirac file
+##################################################################################################
     def _get_exp(self, file_):
         with open(file_) as f:
             for _ in range(29):
@@ -58,6 +79,9 @@ class Basis(object):
 
         return [exp_s, exp_p, exp_d, exp_f, exp_g, exp_h, exp_i]
 
+##################################################################################################
+# Rearrange a basis set into a list (introduce a general serial number for each basis function) 
+##################################################################################################
     def _gen_basis(self,file_, sizes_L, sizes_symb_L, sizes_S):
         size = 0
         exp_gen = []
@@ -104,7 +128,7 @@ class Basis(object):
                                             "the dirac output file: {}"
                                             .format(len(self.exps[ltot]), num_loc))
                         if (ltot == ltot_prev) or (queue == 0):
-                            queue = self._append_to_counters(qu_sym_gen, qu_orb_sym_gen,
+                            queue = self._append_to_queues(qu_sym_gen, qu_orb_sym_gen,
                                                              qu_lx_gen, qu_ly_gen, qu_lz_gen,
                                                              qu_ltot_gen, sizes_symb_L[isym], 
                                                              sym, lx, ly, lz, ltot, queue)
@@ -116,7 +140,7 @@ class Basis(object):
                                                                 lz_gen, qu_lz_gen, ltot_gen,
                                                                 qu_ltot_gen, exp_gen, 
                                                                 self.exps[ltot_prev])
-                            queue = self._append_to_counters(qu_sym_gen, qu_orb_sym_gen,
+                            queue = self._append_to_queues(qu_sym_gen, qu_orb_sym_gen,
                                                              qu_lx_gen, qu_ly_gen, qu_lz_gen,
                                                              qu_ltot_gen, sizes_symb_L[isym], 
                                                              sym, lx, ly, lz, ltot, queue)
@@ -124,6 +148,8 @@ class Basis(object):
                 else:
                     raise Exception("Symmetry symbol: {} is not found".format(sizes_symb_L[isym]))
                 size = size + sizes_S[isym]
+# Fill gaps with meaningless data pointing out that the current serial number corresponds to the
+# small components of Cartesian basis functions and therefore is not considered here
                 for i in range(sizes_S[isym]):
                     exp_gen.append(-1.0)
                     sym_gen.append("S")
@@ -135,6 +161,10 @@ class Basis(object):
 
         return size,  sym_gen, orb_sym_gen, exp_gen, lx_gen, ly_gen, lz_gen, ltot_gen
 
+##################################################################################################
+# Read basis set exponents corresponding to the given orbital symmetry "sym" from the Dirac
+# basis-set-containing file
+##################################################################################################
     def _get_exp_sym(self, f, sym):
         exp = []
         line = f.readline()
@@ -146,6 +176,9 @@ class Basis(object):
                 exp.append(float(line) / self._bohr_AA**2)
         return exp
 
+##################################################################################################
+# Add data written to queues to the final lists of basis functions
+##################################################################################################
     def _update_counters(self, queue, num, sym_gen, qu_sym_gen, orb_sym_gen, qu_orb_sym_gen,
                          lx_gen, qu_lx_gen, ly_gen, qu_ly_gen, lz_gen, qu_lz_gen, ltot_gen,
                          qu_ltot_gen, exp_gen, exp):
@@ -168,7 +201,10 @@ class Basis(object):
         qu_ltot_gen.clear()
         return num, queue
 
-    def _append_to_counters(self, qu_sym_gen, qu_orb_sym_gen, qu_lx_gen, qu_ly_gen, qu_lz_gen,
+##################################################################################################
+# Add single data to the queues
+##################################################################################################
+    def _append_to_queues(self, qu_sym_gen, qu_orb_sym_gen, qu_lx_gen, qu_ly_gen, qu_lz_gen,
                             qu_ltot_gen, sizes, sym, lx, ly, lz, ltot, queue):
         queue = queue + 1
         qu_sym_gen.append(sizes)

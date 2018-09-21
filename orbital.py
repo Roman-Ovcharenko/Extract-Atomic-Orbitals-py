@@ -12,11 +12,29 @@ from others import get_symb_ll
 from others import reconstruct_rad_orbital
 from others import dfactorial as dfact
 
+##################################################################################################
+# The Orbital object represents an atomic orbital
+#
+# self.file_prop - the file containing coefficients of atomic orbitals
+# self.energy - energy of orbital
+# self.parity - parity of orbital
+# self.iorb - serial number of the given orbital in atom
+# self.nn, self.ll, self.jj, self.mj - quantum numbers 
+# self.cf_La, self.cf_Lb - orbital coefficients for spin up = a and spin down = b components
+# self.orb_sym - symbolic representation of the given orbital
+# self.exps - basis set exponents for a given orbital symmetry of the atomic orbital
+# self.cf_rad - radial atomic orbital coefficients averaged over spin-up and spin-down 
+# configurations
+# self.Rc - radial grid for representation of the radial atomic orbital in direct space
+# self.phi - radial atomic orbitals represented on the radial grid
+# self.norm_avg - normalization of the atomic orbitals averaged over spin-up and spin-down
+# configurations
+##################################################################################################
 class Orbital(object):
 
-    def __init__(self, file_coef, energy, parity, jj, mj, ll, bas, iorb, num_orb_ger, at_symb,
+    def __init__(self, file_prop, energy, parity, jj, mj, ll, bas, iorb, num_orb_ger, at_symb,
                 cf_La, cf_Lb, nn, wrong_norm_orbitals):
-        self.file_coef = file_coef
+        self.file_prop = file_prop
         self.energy = energy
         self.parity = parity
         self.iorb = iorb
@@ -38,6 +56,9 @@ class Orbital(object):
         self.norm_avg = self._rad_orbitals_printout(phi_up, phi_down, self.phi, wrong_norm_orbitals)
         return None
 
+##################################################################################################
+# Generate a radial grid for a representation of an atomic orbital in the direct space
+##################################################################################################
     def _get_radial_grid(self):
         Rmax = float(20) # AA
         R0 = float(0.0000264588624)  # AA
@@ -49,6 +70,10 @@ class Orbital(object):
             Rc.append(R0 * ( exp(t) - 1.0 ))
         return Rc
 
+##################################################################################################
+# Calculation of the coefficient use in the representation of the Cartesian basis function 
+# as a spherical harmonic
+##################################################################################################
     def _coef(self, lc, lx, ly, lz, gamma):
         if lx + ly + lz != lc:
             raise Exception("lc != lx + ly + lz")
@@ -57,6 +82,9 @@ class Orbital(object):
         denum = fact(lx) * fact(ly) * fact(lz) * fact(2*lc+2) 
         return mult * sqrt( numer / denum )
 
+##################################################################################################
+# Calculation of the coefficient between Cartesian and spherical Gaussian basis sets 
+##################################################################################################
     def _sphr_to_dec_cf(self, lc, ml, lx, ly, lz):
         if lx + ly + lz != lc:
             raise Exception("lc != lx + ly + lz")
@@ -69,6 +97,9 @@ class Orbital(object):
                                      * self._dec_to_sphr_cf(lc, ml, lxx, lyy, lzz).conjugate())
         return res
 
+##################################################################################################
+# Calculation of the overlap matrix
+##################################################################################################
     def _overlap(self, lx, ly, lz, lxx, lyy, lzz):
         rlxxx = (lx + lxx) / 2.0
         rlyyy = (ly + lyy) / 2.0
@@ -85,6 +116,9 @@ class Orbital(object):
         denum2 = fact(2*lx) * fact(2*ly) * fact(2*lz) * fact(2*lxx) * fact(2*lyy) * fact(2*lzz) 
         return numer1 * sqrt(numer2 / denum2) / denum1
 
+##################################################################################################
+# Calculation of the coefficient between Cartesian and spherical Gaussian basis sets 
+##################################################################################################
     def _dec_to_sphr_cf(self, lc, ml, lx, ly, lz):
         if lx + ly + lz != lc:
             raise Exception("lc != lx + ly + lz")
@@ -117,11 +151,18 @@ class Orbital(object):
         res = mult1 * sum_out
         return res
 
+##################################################################################################
+# Construct a symbolic representation for the given atomic orbital
+##################################################################################################
     def _get_orb_symm(self, at_symb):
         orb_sym = ("{:s}-{:d}{:s}_{:.1f}_{:+.1f}"
                     .format(at_symb, self.nn, get_symb_ll(self.ll), self.jj, self.mj))
         return orb_sym
 
+##################################################################################################
+# Reduce the series of 3D-Cartesian basis set representing atomic orbital into the series of 
+# the 1D-Gaussian basis set representing the radial part of atomic orbital 
+##################################################################################################
     def _calc_cf_rad(self, bas, beta):
         _eps = 1.0e-10
         exps = bas.exps[self.ll]
@@ -140,7 +181,7 @@ class Orbital(object):
         for ibas in range(bas.size):
             if bas.ltot[ibas] != self.ll:
                 continue
-            iexp = self._find_exp(bas.exp[ibas], exps)
+            iexp = exps.index(bas.exp[ibas])
             sum_[iexp] = (sum_[iexp] + cf[ibas] * self._coef(self.ll, bas.lx[ibas], bas.ly[ibas], 
                                                        bas.lz[ibas], bas.exp[ibas])
                           * self._sphr_to_dec_cf(self.ll, ml, bas.lx[ibas], 
@@ -155,17 +196,9 @@ class Orbital(object):
 
         return res
 
-    def _find_exp(self, exp, exps):
-        _eps = 1.0e-10
-        iexp = -1
-        for jexp in range(len(exps)):
-            if abs(exp - exps[jexp]) < _eps: 
-                iexp = jexp
-                break
-        if iexp < 0:
-            raise Exception("Such exponent was not found")
-        return iexp
-
+##################################################################################################
+# Average radial parts for the {n, l, j} orbitals over mj quantum numbers 
+##################################################################################################
     def _avg_cf_rad(self, cf_rad_up, cf_rad_down, bas):
         _eps = 1.0e-10
         exps = bas.exps[self.ll]
@@ -187,6 +220,10 @@ class Orbital(object):
                                                              + abs(cf_rad_down[iexp] / cl_down)))
         return cf_rad
 
+##################################################################################################
+# Print the detailed information about radial parts of atomic orbitals to the screen and 
+# the radial parts of atomic orbitals themselvev to the corresponding files
+##################################################################################################
     def _rad_orbitals_printout(self, phi_up, phi_down, phi_avg, wrong_norm_orbitals):
         norm_up = integrate(self.Rc, phi_up, phi_up)
         norm_down = integrate(self.Rc, phi_down, phi_down)
@@ -219,6 +256,9 @@ class Orbital(object):
                 f_avg.write("  {:22.16e}    {:22.16e}\n".format(self.Rc[ir], phi_avg[ir]))
         return norm_avg
 
+##################################################################################################
+# Calculation of the overlap matrix of two Cartesian Gaussian basis set functions 
+##################################################################################################
     def _overlap_dec_basis(self, lxx, lyy, lzz, mll, gamma2, lx, ly, lz, ml, gamma):
         lsum = lx + ly + lz
         lsum2 = lxx + lyy + lzz

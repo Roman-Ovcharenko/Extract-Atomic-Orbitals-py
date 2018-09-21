@@ -1,9 +1,16 @@
+##################################################################################################
+# This file contains some general functions and subroutines which are not attributed to 
+# a specific class
+##################################################################################################
 from math import sqrt
 from math import exp
 from math import factorial as fact
 from math import ceil
 from math import floor
 
+##################################################################################################
+# Print elapsed time to the screen 
+##################################################################################################
 def print_time(time):
     hours = int(time // 3600)
     remain = time - 3600 * hours
@@ -12,26 +19,10 @@ def print_time(time):
     print("Elapsed time: {} h {} min {} sec".format(hours, minutes, seconds))
     return None
 
-def integrate_R2(R, f, g):
-    Nr = len(R)
-    if len(f) != Nr or len(g) != Nr:
-        raise Exception("f, g and dR have inconsistent size")
-    res = 0.0
-    for ir in range(0, Nr-2, 2):
-        a = R[ir]
-        b = R[ir+2]
-        fa = R[ir]**2 * f[ir] * g[ir]
-        fb = R[ir+2]**2 * f[ir+2] * g[ir+2]
-        fc = R[ir+1]**2 * f[ir+1] * g[ir+1]
-        res = res + (fa + 4*fc + fb) * (b - a) / 6.0
-    if (Nr-1)%2 == 1:
-        a = R[Nr-2]
-        b = R[Nr-1]
-        fa = R[Nr-2]**2 * f[Nr-2] * g[Nr-2]
-        fb = R[Nr-1]**2 * f[Nr-1] * g[Nr-1]
-        res = res + (b - a) * (fa + fb) / 2.0
-    return res
-
+##################################################################################################
+# 1D numerical integration of multiplication of the f(R) and g(R) functions represented on 
+# the R radial grid
+##################################################################################################
 def integrate(R, f, g):
     Nr = len(R)
     if len(f) != Nr or len(g) != Nr:
@@ -52,6 +43,9 @@ def integrate(R, f, g):
         res = res + (b - a) * (fa + fb) / 2.0
     return res
 
+##################################################################################################
+# Implementation of the double factorial 
+##################################################################################################
 def dfactorial(n):
     if n < -1:
         raise Exception("Double factorial of the number < -1 is not defined")
@@ -66,6 +60,9 @@ def dfactorial(n):
         res = res * i
     return res
 
+##################################################################################################
+# The Binomial coefficients
+##################################################################################################
 def binom(n, k):
     if n < 0:
         raise Exception("n cannot be negative")
@@ -79,6 +76,9 @@ def binom(n, k):
         c = c * (n - i) / (i + 1)
     return int(c)
 
+##################################################################################################
+# The symbolic representation of the orbital symmetry
+##################################################################################################
 def get_symb_ll(ll):
     if ll == 0:
         return "s"
@@ -90,10 +90,17 @@ def get_symb_ll(ll):
         return "f"
     elif ll == 4:
         return "g"
-    elif ll >= 5:
+    elif ll == 5:
+        return "h"
+    elif ll == 6:
+        return "i"
+    elif ll >= 7:
         raise Exception("Symbol for ll >= 5 is not implemented")
     return None
 
+##################################################################################################
+# Convert the rational fraction into the decimal fraction
+##################################################################################################
 def convert_to_float(str_):
     try:
         float_ = float(str_)
@@ -102,6 +109,9 @@ def convert_to_float(str_):
         float_ = float(num) / float(denom)
     return float_
 
+##################################################################################################
+# Implementation of the Clebsch-Gordon coefficients
+##################################################################################################
 def clebsch(c,gama,a,alpha,b,beta):
     eps = float(1e-6)
     if abs(gama) > c or abs(alpha) > a or abs(beta) > b:
@@ -120,34 +130,9 @@ def clebsch(c,gama,a,alpha,b,beta):
                        / ( fact(z) * fact(c-a+b-z) * fact(c+gama-z) * fact(a-b-gama+z) ))
     return dabc * cf * summ
 
-def dec_to_sphr_cf(lx, ly, lz, ml):
-    ltot = lx + ly + lz
-    mm = abs(ml)
-    if ml >= 0:
-        sgn_ml = +1
-    else:
-        sgn_ml = -1
-    rj = (lx + ly - mm) / 2.0
-    if rj.is_integer():
-        j = int(rj)
-    else:
-        return complex(0.0, 0.0)
-    numer = fact(2*lx) * fact(2*ly) * fact(2*lz) * fact(ltot) * fact(ltot - mm) 
-    denum = fact(2*ltot) * fact(lx) * fact(ly) * fact(lz) * fact(ltot + mm)
-    mult1 = sqrt(numer / denum) / (2.0**ltot * fact(ltot))
-    up = (ltot - mm) // 2
-    sum_out = complex(0.0, 0.0)
-    for ii in range(up+1):
-        mult2 = ( binom(ltot, ii) * binom(ii, j) * (-1)**ii 
-                * fact(2*ltot - 2*ii) / fact(ltot - mm - 2*ii) ) 
-        sum_in = complex(0.0, 0.0)
-        for kk in range(j+1):
-            sum_in = (sum_in 
-                      + binom(j, kk) * binom(mm, lx - 2*kk) * (-1)**(sgn_ml*(mm - lx + 2*kk)/2.0))
-        sum_out = sum_out + mult2 * sum_in
-    res = mult1 * sum_out
-    return res
-
+##################################################################################################
+# Parse a symbolic representation of the orbital symmetry
+##################################################################################################
 def parse_orb_symm(sym):
     if sym[0] == "s":
         lx = 0
@@ -195,6 +180,9 @@ def parse_orb_symm(sym):
         raise Exception("Such orbital symmetry: {} was not implemented".format(sym[0]))
     return None
 
+##################################################################################################
+# Read the next nonempty line from the file
+##################################################################################################
 def get_line(f):
     while True:
         line = f.readline()
@@ -203,6 +191,9 @@ def get_line(f):
     raise Exception("End of file")
     return None
 
+##################################################################################################
+# Get the representation of the radial atomic orbital in the direct space
+##################################################################################################
 def reconstruct_rad_orbital(cf_rad, exps, Rc, ll):
     phi = [0.0 for ir in range(len(Rc))]
     for ir in range(len(Rc)):

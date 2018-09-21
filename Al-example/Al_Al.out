@@ -1,0 +1,1691 @@
+DIRAC serial starts by allocating 64000000 words (    488.28 MB -  0.477 GB)
+ of memory    out of the allowed maximum of 2147483648 words (  16384.00 MB - 16.000 GB)
+
+Note: maximum allocatable memory for serial run can be set by pam --aw/--ag
+
+ *******************************************************************************
+ *                                                                             *
+ *                                O U T P U T                                  *
+ *                                   from                                      *
+ *                                                                             *
+ *                   @@@@@    @@   @@@@@     @@@@     @@@@@                    *
+ *                   @@  @@        @@  @@   @@  @@   @@                        *
+ *                   @@  @@   @@   @@@@@    @@@@@@   @@                        *
+ *                   @@  @@   @@   @@ @@    @@  @@   @@                        *
+ *                   @@@@@    @@   @@  @@   @@  @@    @@@@@                    *
+ *                                                                             *
+ *                                                                             *
+ %}ZS)S?$=$)]S?$%%>SS$%S$ZZ6cHHMHHHHHHHHMHHM&MHbHH6$L/:<S///</:|/:|:/::!:.::--:%
+ $?S$$%$$$$?%?$(SSS$SSSHMMMMMMMMMMMMMMMMMM6H&6S&SH&&k?6$r~::://///::::::.:::-::$
+ (%?)Z??$$$(S%$>$)S6HMMMMMMMMMMMMMMMMMMMMMMR6M]&&$6HR$&6(i::::::|i|:::::::-:-::(
+ $S?$$)$?$%?))?S/]#MMMMMMMMMMMMMMMMMMMMMMMMMMHM1HRH9R&$$$|):?:/://|:/::/:/.::.:$
+ SS$%%?$%((S)?Z[6MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM&HF$$&/)S?<~::!!:::::::/:-:|.S
+ SS%%%%S$%%%$$MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHHHHHHM>?/S/:/:::`:/://:/::-::S
+ ?$SSSS?%SS$)MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM/4?:S:/:::/:::/:/:::.::?
+ S$(S?S$%(?$HMMMMMMMMMMMMMMMMM#&7RH99MMMMMMMMMMMMMMMMMMHHHd$/:::::/::::::-//.:.S
+ (?SS(%)S&HMMMMMMMMMMMMMMMMM#S|///???$9HHMMMMMMMMMDSZ&1S/?</>?~:///::|/!:/-:-:.(
+ $S?%?<H(MMMMMMMMMMMMMMMMR?`. :.:`::<>:``?/*?##*)$:/>       `((%://::/:::::/::/$
+ S$($$)HdMMMMMMMMMMMMMMMP: . `   `  `    `      `-            `Z<:>?::/:::::|:iS
+ c%%%&HMMMMMMMMMMMMMMMM6:                                      `$%)>%%</>!:::::c
+ S?%/MMMMMMMMMMMMMMMMMMH-                                        /ZSS>?:?~:;/::S
+ $SZ?MMMMMMMMMMMMMMMMMH?.                                        \"&((/?//?|:::$
+ $%$%&MMMMMMMMMMMMMMMMM:.                                          ?%/S:</::/::$
+ ($?}&HMMMMMMMMMMMMMMMM>:                                          $%%<?/i:|i::(
+ Z$($&MMMMMMMMMMMMMMMMHk(:.  . -                                   .S/\?\?/!:/:Z
+ (??$<HMMMMMMMMMMMMMMMFk|:   -.-.                                  :%/%/(:/:ii|(
+ SZ(S?]MMMMMMMMMMMMMMHS?:- -  ::.:                                  |/S:</::?||S
+ $%)$$(MMMMMMMMMMMMMMR):`:. :.:::`,,/bcokb/_                       :S?%?|~:/:/:$
+ %$$%$)[[?$?MMMMMMMMMM: :.:-.::::$7?<&7&MMMMMMM#/           _ .. ..:</?:(:/::::%
+ $$$?Z?HHH~|/MMMMMMMMM/`.-.:.:/:%%%%?dHMMMMMMMMMMH?,-   .,bMMMM6//./i~/~:<:::/:$
+ $($S$M//::S?ZHMMMMMH/:.`:::.:/%S/&MMHMMMMMMMMRM&><   ,HMMMMMMMF  :::?:///:|:::$
+ )[$S$S($|_i:#>::*H&?/::.::/:\"://:?>>`:&HMHSMMMM$:`-   MMHMMMMHHT .)i/?////::/)
+ $$[$$>$}:dHH&$$--?S::-:.:::--/-:``./::>%Zi?)&/?`:.`   `H?$T*\" `  /%?>%:)://ii$
+ $&=&/ZS}$RF<:?/-.|%r/:::/:/:`.-.-..|::S//!`\"``          >??:    `SS<S:)!/////$
+ Z&]>b[Z(Z?&%:::../S$$:>:::i`.`. `-.`  `                         ,>%%%:>/>/!|:/Z
+ $$&/F&1$c$?>:>?/,>?$$ZS/::/:-: ...                              |S?S)S?<~:::::$
+ &$&$&$k&>>|?<:<?((/$[/?)i~/:/. - -                              S?:%%%?/:::/::&
+ =[/Z[[Fp[MMH$>?Z&S$$$/$S///||..-           -.-                  /((S$:%<:///:/=
+ $&>1MHHMMMM6M9MMMM$Z$}$S%/:::.`.            .:/,,,dcb>/:.       ((SSSS%:)!//i|$
+ MMMMMMMMMMMR&&RRRHR&&($(?:|i::-             .:%&S&$[&H&``     ../>%;/?>??:<::>M
+ MMMMMMMMMMMMS/}S$&&H&[$SS//:::.:.   . . .v</Jq1&&D]&M&<,      :/::/?%%)S>?://:M
+ MMMMMMMMMMMM?}$/$$kMM&&$(%/?//:..`.  .|//1d/`://?*/*/\"` `     .:/(SS$%(S%)):%M
+ MMMMMMMMMMMM(}$$>&&MMHR#$S%%:?::.:|-.`:;&&b/D/$p=qpv//b/~`   :/~~%%??$=$)Z$S+;M
+ MMMMMMMMMMMM[|S$$Z1]MMMMD[$?$:>)/::: :/?:``???bD&{b<<-`     .,:/)|SS(}Z/$$?/<SM
+ MMMMMMMMMMMM||$)&7k&MMMMH9]$$??Z%|!/:i::`  `` .             SS?SS?Z/]1$/&$c/$SM
+ MMMMMMMMMMMM| -?>[&]HMMMMMMMH1[/7SS(?:/..-` ::/Sc,/_,     _<$?SS%$S/&c&&$&>//<M
+ MMMMMMMMMMMMR  `$&&&HMM9MMMMMMM&&c$%%:/:/:.:.:/\?\?/\    _MMHk/7S/]dq&1S<&&></M
+ MMMMMMMMMMMMM?  :&96MHMMMMMMMMMMMHHk[S%(<<:// `         ,MMMMMMM&/Z6H]DkH]1$&&M
+ MMMMMMMMMMMMMD    99H9HMMMMMMMMMMMMMMMb&%$<:i.:....    .MMMMMMMMM6HHHRH&H&H1SFM
+ MMMMMMMMMMMMMM|   `?HMMMMMMMMMMMMMMMMMMMHk6k&>$&Z$/?_.bHMMMMMMMMMMM&6HRM9H6]ZkM
+ MMMMMMMMMMMMMMM/    `TMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHMH6RH&R6&M
+ MMMMMMMMMMMMMMMM    -|?HMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMFHH6HMD&&M
+ MMMMMMMMMMMMMMMMk  ..:~?9MMMMMMMMMMMMM#`:MMMMMMMMMMMMMMMMMMMMMMMMMMMMM9MHkR6&FM
+ MMMMMMMMMMMMMMMMM/  .-!:%$ZHMMMMMMMMMR` dMMMMMMMMMMMMMMMMMMMMMMMMMMMMM9MRMHH9&M
+ MMMMMMMMMMMMMMMMMML,:.-|::/?&&MMMMMM` .MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHRMH&&6M
+ MMMMMMMMMMMMMMMMMMMc%>/:::i<:SMMMMMMHdMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHHM&969kM
+ MMMMMMMMMMMMMMMMMMMMSS/$$/(|HMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHH&HH&M
+ MMMMMMMMMMMMMMMMMMMM6S/?/MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMR96H1DR1M
+ MMMMMMMMMMMMMMMMMMMMM&$MHMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHMH691&&M
+ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMH&R&9ZM
+ MMMMMMMMMMMMMMMMMMMMMMMMMRHMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMH&96][6M
+ MMMMMMMMMMMMMMMMMMMMMMMMp?:MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM96HH1][FM
+ MMMMMMMMMMMMMMMMMMMMMMMM> -HMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMH&1k&$&M
+ *******************************************************************************
+ *                                                                             *
+ *         =========================================================           *
+ *                     Program for Atomic and Molecular                        *
+ *          Direct Iterative Relativistic All-electron Calculations            *
+ *         =========================================================           *
+ *                                                                             *
+ *                                                                             *
+ *    Written by:                                                              *
+ *                                                                             *
+ *    Lucas Visscher           Vrije Universiteit Amsterdam      Netherlands   *
+ *    Hans Joergen Aa. Jensen  University of Southern Denmark    Denmark       *
+ *    Radovan Bast             UiT The Arctic University of      Norway        *
+ *    Trond Saue               Universite Toulouse III           France        *
+ *                                                                             *
+ *    with contributions from:                                                 *
+ *                                                                             *
+ *    Vebjoern Bakken          University of Oslo                Norway        *
+ *    Kenneth G. Dyall         Schrodinger, Inc., Portland       USA           *
+ *    Sebastien Dubillard      University of Strasbourg          France        *
+ *    Ulf Ekstroem             University of Oslo                Norway        *
+ *    Ephraim Eliav            University of Tel Aviv            Israel        *
+ *    Thomas Enevoldsen        University of Southern Denmark    Denmark       *
+ *    Elke Fasshauer           University of Aarhus              Denmark       *
+ *    Timo Fleig               Universite Toulouse III           France        *
+ *    Olav Fossgaard           UiT The Arctic University of      Norway        *
+ *    Andre S. P. Gomes        CNRS/Universite de Lille          France        *
+ *    Erik D. Hedegaard        Lund University                   Sweden        *
+ *    Trygve Helgaker          University of Oslo                Norway        *
+ *    Benjamin Helmich-Paris   Vrije Universiteit Amsterdam      Netherlands   *
+ *    Johan Henriksson         Linkoeping University             Sweden        *
+ *    Miroslav Ilias           Matej Bel University              Slovakia      *
+ *    Christoph R. Jacob       TU Braunschweig                   Germany       *
+ *    Stefan Knecht            ETH Zuerich                       Switzerland   *
+ *    Stanislav Komorovsky     UiT The Arctic University of      Norway        *
+ *    Ossama Kullie            University of Kassel              Germany       *
+ *    Jon K. Laerdahl          University of Oslo                Norway        *
+ *    Christoffer V. Larsen    University of Southern Denmark    Denmark       *
+ *    Yoon Sup Lee             KAIST, Daejeon                    South Korea   *
+ *    Huliyar S. Nataraj       BME/Budapest Univ. Tech. & Econ.  Hungary       *
+ *    Malaya Kumar Nayak       Bhabha Atomic Research Centre     India         *
+ *    Patrick Norman           Linkoeping University             Sweden        *
+ *    Malgorzata Olejniczak    CNRS/Universite de Lille          France        *
+ *    Jeppe Olsen              Aarhus University                 Denmark       *
+ *    Jogvan Magnus H. Olsen   University of Southern Denmark    Denmark       *
+ *    Young Choon Park         KAIST, Daejeon                    South Korea   *
+ *    Jesper K. Pedersen       University of Southern Denmark    Denmark       *
+ *    Markus Pernpointner      University of Heidelberg          Germany       *
+ *    Roberto Di Remigio       UiT The Arctic University of      Norway        *
+ *    Kenneth Ruud             UiT The Arctic University of      Norway        *
+ *    Pawel Salek              Stockholm Inst. of Technology     Sweden        *
+ *    Bernd Schimmelpfennig    Karlsruhe Institute of Technology Germany       *
+ *    Avijit Shee              University of Michigan            USA           *
+ *    Jetze Sikkema            Vrije Universiteit Amsterdam      Netherlands   *
+ *    Andreas J. Thorvaldsen   UiT The Arctic University of      Norway        *
+ *    Joern Thyssen            University of Southern Denmark    Denmark       *
+ *    Joost van Stralen        Vrije Universiteit Amsterdam      Netherlands   *
+ *    Sebastien Villaume       Linkoeping University             Sweden        *
+ *    Olivier Visser           University of Groningen           Netherlands   *
+ *    Toke Winther             University of Southern Denmark    Denmark       *
+ *    Shigeyoshi Yamamoto      Chukyo University                 Japan         *
+ *                                                                             *
+ *    For more information about the DIRAC code see http://diracprogram.org    *
+ *                                                                             *
+ *    This is an experimental code. The authors accept no responsibility       *
+ *    for the performance of the code or for the correctness of the results.   *
+ *                                                                             *
+ *    The code (in whole or part) is not to be reproduced for further          *
+ *    distribution without the written permission of the authors or            *
+ *    their representatives.                                                   *
+ *                                                                             *
+ *    If results obtained with this code are published, an                     *
+ *    appropriate citation would be:                                           *
+ *                                                                             *
+ *    DIRAC, a relativistic ab initio electronic structure program,            *
+ *    Release DIRAC17 (2017),                                                  *
+ *    written by L. Visscher, H. J. Aa. Jensen, R. Bast, and T. Saue,          *
+ *    with contributions from V. Bakken, K. G. Dyall, S. Dubillard,            *
+ *    U. Ekstroem, E. Eliav, T. Enevoldsen, E. Fasshauer, T. Fleig,            *
+ *    O. Fossgaard, A. S. P. Gomes, E. D. Hedegrd, T. Helgaker,               *
+ *    J. Henriksson, M. Ilias, Ch. R. Jacob, S. Knecht, S. Komorovsky,         *
+ *    O. Kullie, J. K. Laerdahl, C. V. Larsen, Y. S. Lee, H. S. Nataraj,       *
+ *    M. K. Nayak, P. Norman, G. Olejniczak, J. Olsen, J. M. H. Olsen,         *
+ *    Y. C. Park, J. K. Pedersen, M. Pernpointner, R. Di Remigio, K. Ruud,     *
+ *    P. Salek, B. Schimmelpfennig, A. Shee, J. Sikkema, A. J. Thorvaldsen,    *
+ *    J. Thyssen, J. van Stralen, S. Villaume, O. Visser,T. Winther,           *
+ *    and S. Yamamoto (see http://diracprogram.org).                           *
+ *                                                                             *
+ *******************************************************************************
+
+
+Version information
+-------------------
+
+Branch        | 
+Commit hash   | 
+Commit author | 
+Commit date   | 
+
+
+Configuration and build information
+-----------------------------------
+
+Who compiled             | campic
+Compiled on server       | Campic.local
+Operating system         | Darwin-17.7.0
+CMake version            | 3.12.2
+CMake generator          | Unix Makefiles
+CMake build type         | release
+Configuration time       | 2018-09-13 13:20:51.871611
+Python version           | 2.7.1
+Fortran compiler         | /usr/local/bin/gfortran
+Fortran compiler version | 6.3.0
+Fortran compiler flags   |  -g -fcray-pointer -fbacktrace -fno-range-check -DVAR_GFORTRAN -DVAR_MFDS
+C compiler               | /Applications/Xcode.app/Contents/Developer/usr/bin/gcc
+C compiler version       | 4.2
+C compiler flags         |  -g
+C++ compiler             | /Applications/Xcode.app/Contents/Developer/usr/bin/g++
+C++ compiler version     | 4.2
+C++ compiler flags       |  -g -Wall -Wno-unknown-pragmas -Wno-sign-compare -Woverloaded-virtual -Wwrite-strings -Wno-unused
+Static linking           | False
+64-bit integers          | False
+MPI parallelization      | False
+MPI launcher             | unknown
+Math libraries           | /usr/lib/liblapack.dylib;/usr/lib/libblas.dylib
+Builtin BLAS library     | OFF
+Builtin LAPACK library   | OFF
+Explicit libraries       | unknown
+Compile definitions      | HAVE_SYSTEM_NATIVE_BLAS;HAVE_SYSTEM_NATIVE_LAPACK;SYS_DARWIN;VAR_MFDS;PRG_DIRAC;INSTALL_WRKMEM=64000000;HAS_PCMSOLVER;BUILD_GEN1INT;HAS_PELIB;MOD_QCORR;HAS_STIELTJES
+
+
+ Selftest of ISO_C_BINDING Fortran - C/C++ interoperability PASSED
+
+Execution time and host
+-----------------------
+
+ 
+     Date and time (Mac OSX): Sat Sep 15 16:11:09 2018
+     Host name              : Campic.local                            
+
+
+Contents of the input file
+--------------------------
+
+**DIRAC                                                                                             
+.TITLE                                                                                              
+Al atom                                                                                             
+.WAVE FUNCTION                                                                                      
+.ANALYZE                                                                                            
+#################                                                                                   
+**WAVE FUNCTION                                                                                     
+.SCF                                                                                                
+*SCF                                                                                                
+.OPEN SHELL                                                                                         
+1                                                                                                   
+3/2,6                                                                                               
+.CLOSED SHELL                                                                                       
+ 4 6                                                                                                
+.MAXITR                                                                                             
+150                                                                                                 
+.EVCCNV                                                                                             
+1.0D-8 1.0D-8                                                                                       
+#################                                                                                   
+**ANALYZE                                                                                           
+.PRIVEC                                                                                             
+*PRIVEC                                                                                             
+.PRICMP                                                                                             
+ 1 0                                                                                                
+#################                                                                                   
+**GENERAL                                                                                           
+.DIRECT                                                                                             
+ 1 1 1                                                                                              
+.SPHTRA                                                                                             
+ 1 1                                                                                                
+.PCMOUT                                                                                             
+.LINDEP                                                                                             
+1.0D-6 1.0D-8                                                                                       
+.CVALUE                                                                                             
+137.0359998                                                                                         
+#################                                                                                   
+**HAMILTONIAN                                                                                       
+.GAUNT                                                                                              
+.DOSSSS                                                                                             
+#.LVCORR                                                                                            
+#.URKBAL                                                                                            
+.INTFLG                                                                                             
+1 1 1                                                                                               
+#################                                                                                   
+**INTEGRALS                                                                                         
+.NUCMOD                                                                                             
+2                                                                                                   
+*READIN                                                                                             
+.UNCONTRACT                                                                                         
+*TWOINT                                                                                             
+.AOFOCK                                                                                             
+*END OF INPUT                                                                                       
+
+
+Contents of the molecule file
+-----------------------------
+
+DIRAC                                                                                               
+Al ATOM                                                                                             
+smallest basis set                                                                                  
+C 1                A                                                                                
+       13.  1                                                                                       
+Al     0.000000  0.000000  0.000000                                                                 
+LARGE BASIS dyall.v4z                                                                               
+FINISH                                                                                              
+
+
+    *************************************************************************
+    ******************************** Al atom ********************************
+    *************************************************************************
+
+ Jobs in this run:
+   * Wave function
+   * Analysis
+
+
+    **************************************************************************
+    ************************** General DIRAC set-up **************************
+    **************************************************************************
+
+   CODATA Recommended Values of the Fundamental Physical Constants: 1998  
+                Peter J. Mohr and Barry N. Taylor                         
+   Journal of Physical and Chemical Reference Data, Vol. 28, No. 6, 1999  
+ * The speed of light :        137.0359998
+   * The speed of light scaled by  1.00D+00 to :  137.035999800
+ * Running in four-component mode
+ * Direct evaluation of the following two-electron integrals:
+   - LL-integrals
+   - SL-integrals
+   - SS-integrals
+   - GT-integrals
+ * Spherical transformation embedded in MO-transformation
+   for large components
+ * Transformation to scalar RKB basis embedded in
+   MO-transformation for small components
+ * Thresholds for linear dependence:
+   Large components:   1.00D-06
+   Small components:   1.00D-08
+ * MO-coefficients written to formatted file DFPCMO
+ * General print level   :   0
+
+
+    *************************************************************************
+    ****************** Output from HERMIT input processing ******************
+    *************************************************************************
+
+ Default print level:        1
+ Nuclear model: Gaussian charge distribution.
+
+ Two-electron integrals not calculated.
+
+
+ Ordinary (field-free non-relativistic) Hamiltonian integrals not calculated.
+
+
+
+ Changes of defaults for *READIN
+ -------------------------------
+
+
+ Uncontracted basis forced, irrespective of basis input file.
+
+
+
+  Set-up from HR2INP:
+  -------------------
+
+ Print level in TWOINT:    1
+ * Direct calculation of Fock matrices in AO-basis.
+ * Default screening threshold in direct Fock matrix construction: 1.00E-12
+ * Separate density screening of Coulomb integral batches
+ * Separate density screening of exchange integral batches
+
+
+   ***************************************************************************
+   ****************** Output from MOLECULE input processing ******************
+   ***************************************************************************
+
+
+
+  Title Cards
+  -----------
+
+  Al ATOM                                                                 
+  smallest basis set                                                      
+
+  Coordinates are entered in Angstroms and converted to atomic units.
+          - Conversion factor : 1 bohr = 0.52917721 A
+
+  Nuclear Gaussian exponent for atom of charge  13.000 :    4.4335984491D+08
+
+
+                     SYMADD: Detection of molecular symmetry
+                     ---------------------------------------
+
+ Symmetry test threshold:  5.00E-06
+
+ Symmetry point group found: D(oo,h)        
+
+ Centered and Rotated in original atom order
+ -------------------------------------------
+   13         0.00000000     0.00000000     0.00000000       1
+
+ The following elements were found: X  Y  Z  
+
+
+  Symmetry Operations
+  -------------------
+
+  Symmetry operations: 3
+
+
+
+                          SYMGRP:Point group information
+                          ------------------------------
+
+Full group is:  D(oo,h)        
+Represented as: D2h
+
+   * The point group was generated by:
+
+      Reflection in the yz-plane
+      Reflection in the xz-plane
+      Reflection in the xy-plane
+
+   * Group multiplication table
+
+        |  E   C2z  C2y  C2x   i   Oxy  Oxz  Oyz
+   -----+----------------------------------------
+     E  |  E   C2z  C2y  C2x   i   Oxy  Oxz  Oyz
+    C2z | C2z   E   C2x  C2y  Oxy   i   Oyz  Oxz
+    C2y | C2y  C2x   E   C2z  Oxz  Oyz   i   Oxy
+    C2x | C2x  C2y  C2z   E   Oyz  Oxz  Oxy   i 
+     i  |  i   Oxy  Oxz  Oyz   E   C2z  C2y  C2x
+    Oxy | Oxy   i   Oyz  Oxz  C2z   E   C2x  C2y
+    Oxz | Oxz  Oyz   i   Oxy  C2y  C2x   E   C2z
+    Oyz | Oyz  Oxz  Oxy   i   C2x  C2y  C2z   E 
+
+   * Character table
+
+        |  E   C2z  C2y  C2x   i   Oxy  Oxz  Oyz
+   -----+----------------------------------------
+    Ag  |   1    1    1    1    1    1    1    1
+    B3u |   1   -1   -1    1   -1    1    1   -1
+    B2u |   1   -1    1   -1   -1    1   -1    1
+    B1g |   1    1   -1   -1    1    1   -1   -1
+    B1u |   1    1   -1   -1   -1   -1    1    1
+    B2g |   1   -1    1   -1    1   -1    1   -1
+    B3g |   1   -1   -1    1    1   -1   -1    1
+    Au  |   1    1    1    1   -1   -1   -1   -1
+
+   * Direct product table
+
+        | Ag   B3u  B2u  B1g  B1u  B2g  B3g  Au 
+   -----+----------------------------------------
+    Ag  | Ag   B3u  B2u  B1g  B1u  B2g  B3g  Au 
+    B3u | B3u  Ag   B1g  B2u  B2g  B1u  Au   B3g
+    B2u | B2u  B1g  Ag   B3u  B3g  Au   B1u  B2g
+    B1g | B1g  B2u  B3u  Ag   Au   B3g  B2g  B1u
+    B1u | B1u  B2g  B3g  Au   Ag   B3u  B2u  B1g
+    B2g | B2g  B1u  Au   B3g  B3u  Ag   B1g  B2u
+    B3g | B3g  Au   B1u  B2g  B2u  B1g  Ag   B3u
+    Au  | Au   B3g  B2g  B1u  B1g  B2u  B3u  Ag 
+
+
+                            **************************
+                            *** Output from DBLGRP ***
+                            **************************
+
+   * Two fermion irreps:  E1g  E1u
+   * Real group. NZ = 1
+   * Direct product decomposition:
+          E1g x E1g : Ag  + B1g + B2g + B3g
+          E1u x E1g : Au  + B1u + B2u + B3u
+          E1u x E1u : Ag  + B1g + B2g + B3g
+
+
+                                 Spinor structure
+                                 ----------------
+
+
+   * Fermion irrep no.: 1            * Fermion irrep no.: 2
+
+      La  |  Ag (1)  B1g(2)  |                La  |  Au (1)  B1u(2)  |
+      Sa  |  Au (1)  B1u(2)  |                Sa  |  Ag (1)  B1g(2)  |
+      Lb  |  B2g(3)  B3g(4)  |                Lb  |  B2u(3)  B3u(4)  |
+      Sb  |  B2u(3)  B3u(4)  |                Sb  |  B2g(3)  B3g(4)  |
+
+
+                              Quaternion symmetries
+                              ---------------------
+
+    Rep  T(+)
+    -----------------------------
+    Ag   1
+    B3u  k
+    B2u  j
+    B1g  i
+    B1u  i
+    B2g  j
+    B3g  k
+    Au   1
+
+  QM-QM nuclear repulsion energy :      0.000000000000
+
+
+
+                                 Isotopic Masses
+                                 ---------------
+
+                           Al         26.981541
+
+                       Total mass:    26.981541 amu
+                       Natural abundance: 100.000 %
+
+ Center-of-mass coordinates (a.u.):    0.000000    0.000000    0.000000
+
+
+  Atoms and basis sets
+  --------------------
+
+  Number of atom types :    1
+  Total number of atoms:    1
+
+  label    atoms   charge   prim    cont     basis   
+  ----------------------------------------------------------------------
+  Al          1      13     119     119      L  - [24s14p3d2f1g|24s14p3d2f1g]                                    
+                            282     282      S  - [14s27p16d4f2g1h|14s27p16d4f2g1h]                              
+  ----------------------------------------------------------------------
+                            119     119      L  - large components
+                            282     282      S  - small components
+  ----------------------------------------------------------------------
+  total:      1      13     401     401
+
+  Cartesian basis used.
+  Threshold for integrals (to be written to file):  1.00D-15
+
+
+  References for the basis sets
+  -----------------------------
+
+  Atom type   1
+   1s-3s: K.G. Dyall, Theor. Chem. Acc. (2016) 135:128.                           
+   4s-7s: K.G. Dyall, J. Phys. Chem. A. (2009) 113:12638                          
+   2p-3p: K.G. Dyall, Theor. Chem. Acc. (2016) 135:128.                           
+   4p-6p: K.G. Dyall, Theor. Chem. Acc. (2006) 115:441                            
+      7p: K.G. Dyall, Theor. Chem. Acc. (2012) 131:1172                           
+      3d: K.G. Dyall and A.S.P. Gomes, unpublished.                               
+      4d: K.G. Dyall, Theor. Chem. Acc. (2007) 117:483                            
+      6d: K.G. Dyall, Theor. Chem. Acc. (2011) 129:603                            
+      5d: K.G. Dyall, Theor. Chem. Acc. (2004) 112:403;                           
+      4f: A.S.P. Gomes, K.G. Dyall and L. Visscher, Theor. Chem. Acc. (2010)      
+
+
+  Cartesian Coordinates (bohr)
+  ----------------------------
+
+  Total number of coordinates:  3
+
+
+   1   Al       x      0.0000000000
+   2            y      0.0000000000
+   3            z      0.0000000000
+
+
+
+  Cartesian coordinates in XYZ format (Angstrom)
+  ----------------------------------------------
+
+    1
+
+Al     0.0000000000   0.0000000000   0.0000000000
+
+
+  Symmetry Coordinates
+  --------------------
+
+  Number of coordinates in each symmetry:     0    1    1    0    1    0    0    0
+
+
+  Symmetry  B3u( 2)
+
+    1   Al    x    1
+
+
+  Symmetry  B2u( 3)
+
+    2   Al    y    2
+
+
+  Symmetry  B1u( 5)
+
+    3   Al    z    3
+
+
+  This is an atomic calculation.
+
+
+                                GETLAB: AO-labels
+                                -----------------
+
+   * Large components:   35
+     1  L Al  1 s        2  L Al  1 px       3  L Al  1 py       4  L Al  1 pz       5  L Al  1 dxx      6  L Al  1 dxy 
+     7  L Al  1 dxz      8  L Al  1 dyy      9  L Al  1 dyz     10  L Al  1 dzz     11  L Al  1 fxxx    12  L Al  1 fxxy
+    13  L Al  1 fxxz    14  L Al  1 fxyy    15  L Al  1 fxyz    16  L Al  1 fxzz    17  L Al  1 fyyy    18  L Al  1 fyyz
+    19  L Al  1 fyzz    20  L Al  1 fzzz    21  L Al  1 g400    22  L Al  1 g310    23  L Al  1 g301    24  L Al  1 g220
+    25  L Al  1 g211    26  L Al  1 g202    27  L Al  1 g130    28  L Al  1 g121    29  L Al  1 g112    30  L Al  1 g103
+    31  L Al  1 g040    32  L Al  1 g031    33  L Al  1 g022    34  L Al  1 g013    35  L Al  1 g004
+   * Small components:   56
+    36  S Al  1 s       37  S Al  1 px      38  S Al  1 py      39  S Al  1 pz      40  S Al  1 dxx     41  S Al  1 dxy 
+    42  S Al  1 dxz     43  S Al  1 dyy     44  S Al  1 dyz     45  S Al  1 dzz     46  S Al  1 fxxx    47  S Al  1 fxxy
+    48  S Al  1 fxxz    49  S Al  1 fxyy    50  S Al  1 fxyz    51  S Al  1 fxzz    52  S Al  1 fyyy    53  S Al  1 fyyz
+    54  S Al  1 fyzz    55  S Al  1 fzzz    56  S Al  1 g400    57  S Al  1 g310    58  S Al  1 g301    59  S Al  1 g220
+    60  S Al  1 g211    61  S Al  1 g202    62  S Al  1 g130    63  S Al  1 g121    64  S Al  1 g112    65  S Al  1 g103
+    66  S Al  1 g040    67  S Al  1 g031    68  S Al  1 g022    69  S Al  1 g013    70  S Al  1 g004    71  S Al  1 h500
+    72  S Al  1 h410    73  S Al  1 h401    74  S Al  1 h320    75  S Al  1 h311    76  S Al  1 h302    77  S Al  1 h230
+    78  S Al  1 h221    79  S Al  1 h212    80  S Al  1 h203    81  S Al  1 h140    82  S Al  1 h131    83  S Al  1 h122
+    84  S Al  1 h113    85  S Al  1 h104    86  S Al  1 h050    87  S Al  1 h041    88  S Al  1 h032    89  S Al  1 h023
+    90  S Al  1 h014    91  S Al  1 h005
+
+
+                                GETLAB: SO-labels
+                                -----------------
+
+   * Large components:   35
+     1  L Ag Al s        2  L Ag Al dxx      3  L Ag Al dyy      4  L Ag Al dzz      5  L Ag Al g400     6  L Ag Al g220
+     7  L Ag Al g202     8  L Ag Al g040     9  L Ag Al g022    10  L Ag Al g004    11  L B3uAl px      12  L B3uAl fxxx
+    13  L B3uAl fxyy    14  L B3uAl fxzz    15  L B2uAl py      16  L B2uAl fxxy    17  L B2uAl fyyy    18  L B2uAl fyzz
+    19  L B1gAl dxy     20  L B1gAl g310    21  L B1gAl g130    22  L B1gAl g112    23  L B1uAl pz      24  L B1uAl fxxz
+    25  L B1uAl fyyz    26  L B1uAl fzzz    27  L B2gAl dxz     28  L B2gAl g301    29  L B2gAl g121    30  L B2gAl g103
+    31  L B3gAl dyz     32  L B3gAl g211    33  L B3gAl g031    34  L B3gAl g013    35  L Au Al fxyz
+   * Small components:   56
+    36  S Ag Al s       37  S Ag Al dxx     38  S Ag Al dyy     39  S Ag Al dzz     40  S Ag Al g400    41  S Ag Al g220
+    42  S Ag Al g202    43  S Ag Al g040    44  S Ag Al g022    45  S Ag Al g004    46  S B3uAl px      47  S B3uAl fxxx
+    48  S B3uAl fxyy    49  S B3uAl fxzz    50  S B3uAl h500    51  S B3uAl h320    52  S B3uAl h302    53  S B3uAl h140
+    54  S B3uAl h122    55  S B3uAl h104    56  S B2uAl py      57  S B2uAl fxxy    58  S B2uAl fyyy    59  S B2uAl fyzz
+    60  S B2uAl h410    61  S B2uAl h230    62  S B2uAl h212    63  S B2uAl h050    64  S B2uAl h032    65  S B2uAl h014
+    66  S B1gAl dxy     67  S B1gAl g310    68  S B1gAl g130    69  S B1gAl g112    70  S B1uAl pz      71  S B1uAl fxxz
+    72  S B1uAl fyyz    73  S B1uAl fzzz    74  S B1uAl h401    75  S B1uAl h221    76  S B1uAl h203    77  S B1uAl h041
+    78  S B1uAl h023    79  S B1uAl h005    80  S B2gAl dxz     81  S B2gAl g301    82  S B2gAl g121    83  S B2gAl g103
+    84  S B3gAl dyz     85  S B3gAl g211    86  S B3gAl g031    87  S B3gAl g013    88  S Au Al fxyz    89  S Au Al h311
+    90  S Au Al h131    91  S Au Al h113
+
+
+  Symmetry Orbitals
+  -----------------
+
+  Number of orbitals in each symmetry:          113    65    65    28    65    28    28     9
+  Number of large orbitals in each symmetry:     39    20    20     6    20     6     6     2
+  Number of small orbitals in each symmetry:     74    45    45    22    45    22    22     7
+
+* Large component functions
+
+  Symmetry  Ag ( 1)
+
+       24 functions:    Al s   
+        3 functions:    Al dxx 
+        3 functions:    Al dyy 
+        3 functions:    Al dzz 
+        1 functions:    Al g400
+        1 functions:    Al g220
+        1 functions:    Al g202
+        1 functions:    Al g040
+        1 functions:    Al g022
+        1 functions:    Al g004
+
+  Symmetry  B3u( 2)
+
+       14 functions:    Al px  
+        2 functions:    Al fxxx
+        2 functions:    Al fxyy
+        2 functions:    Al fxzz
+
+  Symmetry  B2u( 3)
+
+       14 functions:    Al py  
+        2 functions:    Al fxxy
+        2 functions:    Al fyyy
+        2 functions:    Al fyzz
+
+  Symmetry  B1g( 4)
+
+        3 functions:    Al dxy 
+        1 functions:    Al g310
+        1 functions:    Al g130
+        1 functions:    Al g112
+
+  Symmetry  B1u( 5)
+
+       14 functions:    Al pz  
+        2 functions:    Al fxxz
+        2 functions:    Al fyyz
+        2 functions:    Al fzzz
+
+  Symmetry  B2g( 6)
+
+        3 functions:    Al dxz 
+        1 functions:    Al g301
+        1 functions:    Al g121
+        1 functions:    Al g103
+
+  Symmetry  B3g( 7)
+
+        3 functions:    Al dyz 
+        1 functions:    Al g211
+        1 functions:    Al g031
+        1 functions:    Al g013
+
+  Symmetry  Au ( 8)
+
+        2 functions:    Al fxyz
+
+* Small component functions
+
+  Symmetry  Ag ( 1)
+
+       14 functions:    Al s   
+       16 functions:    Al dxx 
+       16 functions:    Al dyy 
+       16 functions:    Al dzz 
+        2 functions:    Al g400
+        2 functions:    Al g220
+        2 functions:    Al g202
+        2 functions:    Al g040
+        2 functions:    Al g022
+        2 functions:    Al g004
+
+  Symmetry  B3u( 2)
+
+       27 functions:    Al px  
+        4 functions:    Al fxxx
+        4 functions:    Al fxyy
+        4 functions:    Al fxzz
+        1 functions:    Al h500
+        1 functions:    Al h320
+        1 functions:    Al h302
+        1 functions:    Al h140
+        1 functions:    Al h122
+        1 functions:    Al h104
+
+  Symmetry  B2u( 3)
+
+       27 functions:    Al py  
+        4 functions:    Al fxxy
+        4 functions:    Al fyyy
+        4 functions:    Al fyzz
+        1 functions:    Al h410
+        1 functions:    Al h230
+        1 functions:    Al h212
+        1 functions:    Al h050
+        1 functions:    Al h032
+        1 functions:    Al h014
+
+  Symmetry  B1g( 4)
+
+       16 functions:    Al dxy 
+        2 functions:    Al g310
+        2 functions:    Al g130
+        2 functions:    Al g112
+
+  Symmetry  B1u( 5)
+
+       27 functions:    Al pz  
+        4 functions:    Al fxxz
+        4 functions:    Al fyyz
+        4 functions:    Al fzzz
+        1 functions:    Al h401
+        1 functions:    Al h221
+        1 functions:    Al h203
+        1 functions:    Al h041
+        1 functions:    Al h023
+        1 functions:    Al h005
+
+  Symmetry  B2g( 6)
+
+       16 functions:    Al dxz 
+        2 functions:    Al g301
+        2 functions:    Al g121
+        2 functions:    Al g103
+
+  Symmetry  B3g( 7)
+
+       16 functions:    Al dyz 
+        2 functions:    Al g211
+        2 functions:    Al g031
+        2 functions:    Al g013
+
+  Symmetry  Au ( 8)
+
+        4 functions:    Al fxyz
+        1 functions:    Al h311
+        1 functions:    Al h131
+        1 functions:    Al h113
+
+
+   ***************************************************************************
+   *************************** Hamiltonian defined ***************************
+   ***************************************************************************
+
+ * Print level:    0
+ * Dirac-Coulomb-Gaunt Hamiltonian
+ * Default integral flags passed to all modules
+   - LL-integrals:     1
+   - LS-integrals:     1
+   - SS-integrals:     1
+   - GT-integrals:     1
+   --> chosen by user's setting of INTFLG
+ * Basis set:
+   - uncontracted large component basis set
+   - uncontracted small component basis set
+
+
+ Information about the restricted kinetic balance scheme:
+ * Default RKB projection:
+   1: Pre-projection in scalar basis
+   2: Removal of unphysical solutions (via diagonalization of free particle Hamiltonian)
+
+
+    **************************************************************************
+    ************************** Wave function module **************************
+    **************************************************************************
+
+ Wave function types requested (in input order):
+     HF        
+
+ Wave function jobs in execution order (expanded):
+ * Hartree-Fock calculation
+===========================================================================
+ *SCF: Set-up for Hartree-Fock calculation:
+===========================================================================
+ * Number of fermion irreps: 2
+ * Open shell SCF calculation using Average-of-Configuration
+
+ * Shell specifications:
+
+                                        Orbitals
+                        #electrons  irrep 1  irrep 2     f        a      alpha
+                        ----------  -------  -------  -------  -------  -------
+   Closed shell           10             2        3    1.0000   1.0000   0.0000
+   Open shell no. 1        3.00          1        3    0.3750   0.7619   0.3810
+   ----------------------------------------------------------------------------
+   Total                  13.00          3        6
+
+   f is the fraction occupation; a and alpha open shell coupling coefficients.
+
+ * Sum of atomic potentials used for start guess
+ * General print level   :   0
+
+ ***** INITIAL TRIAL SCF FUNCTION *****
+ * Trial vectors read from file DFCOEF
+ * Scaling of active-active block correction to open shell Fock operator    0.500000
+   to improve convergence (default value).
+   The final open-shell orbital energies are recalculated with 1.0 scaling,
+   such that all occupied orbital energies correspond to Koopmans' theorem ionization energies.
+
+ ***** SCF CONVERGENCE CRITERIA *****
+ * Convergence on norm of error vector (gradient).
+   Desired convergence:1.000D-08
+   Allowed convergence:1.000D-08
+
+ ***** CONVERGENCE CONTROL *****
+ * Fock matrix constructed using differential density matrix
+    with optimal parameter.
+ * DIIS (in MO basis)
+ * DIIS will be activated when convergence reaches : 1.00D+20
+   - Maximum size of B-matrix:   10
+ * Damping of Fock matrix when DIIS is not activated. 
+   Weight of old matrix    : 0.250
+ * Maximum number of SCF iterations  :  150
+ * No quadratic convergent Hartree-Fock
+ * Contributions from 2-electron integrals to Fock matrix:
+   LL-integrals.
+   SL-integrals from iteration    1
+   SS-integrals from iteration    1
+   Gaunt integrals from iteration    1
+    ---> this is default setting from Hamiltonian input
+ ***** OUTPUT CONTROL *****
+ * Only electron eigenvalues written out.
+
+
+   ***************************************************************************
+   ***************************** Analysis module *****************************
+   ***************************************************************************
+
+ Jobs in this run:
+ * Write vectors
+===========================================================================
+ VECINP: Vector print
+===========================================================================
+ * Coefficients written in SO-basis
+ * Vector print:
+    - Orbitals in fermion ircop E1g :1..   3                                                                 
+    - Orbitals in fermion ircop E1u :1..   6                                                                 
+ * Only large component coefficients written out.
+
+
+ ********************************************************************************
+ *************************** Input consistency checks ***************************
+ ********************************************************************************
+
+
+
+    *************************************************************************
+    ************************ End of input processing ************************
+    *************************************************************************
+
+
+
+                      Nuclear contribution to dipole moments
+                      --------------------------------------
+
+                    All dipole components are zero by symmetry
+
+
+                       Generating Lowdin canonical matrix:
+                       -----------------------------------
+
+   L   Ag    * Deleted:          6(Proj:          6, Lindep:          0) Smin: 0.12E-03
+   L   B1g   * Deleted:          1(Proj:          1, Lindep:          0) Smin: 0.12E+00
+   L   B2g   * Deleted:          1(Proj:          1, Lindep:          0) Smin: 0.12E+00
+   L   B3g   * Deleted:          1(Proj:          1, Lindep:          0) Smin: 0.12E+00
+   S   B3u   * Deleted:          7(Proj:          7, Lindep:          0) Smin: 0.15E-04
+   S   B2u   * Deleted:          7(Proj:          7, Lindep:          0) Smin: 0.15E-04
+   S   B1u   * Deleted:          7(Proj:          7, Lindep:          0) Smin: 0.15E-04
+   S   Au    * Deleted:          1(Proj:          1, Lindep:          0) Smin: 0.20E-03
+   L   B3u   * Deleted:          2(Proj:          2, Lindep:          0) Smin: 0.29E-02
+   L   B2u   * Deleted:          2(Proj:          2, Lindep:          0) Smin: 0.29E-02
+   L   B1u   * Deleted:          2(Proj:          2, Lindep:          0) Smin: 0.29E-02
+   L   Au    * Deleted:          0(Proj:          0, Lindep:          0) Smin: 0.31E+00
+   S   Ag    * Deleted:         22(Proj:         22, Lindep:          0) Smin: 0.35E-03
+   S   B1g   * Deleted:          2(Proj:          2, Lindep:          0) Smin: 0.17E-03
+   S   B2g   * Deleted:          2(Proj:          2, Lindep:          0) Smin: 0.17E-03
+   S   B3g   * Deleted:          2(Proj:          2, Lindep:          0) Smin: 0.17E-03
+
+
+                                Output from MODHAM
+                                ------------------
+
+ * Applied strict kinetic balance !
+ * Applied SL-regrouping on AO2MO tranf.matrix in SLSORT.
+
+
+                                Output from LINSYM
+                                ------------------
+
+
+ Parity   MJ  Functions(total) Functions(LC) Functions(SC)
+     1    1/2         64           32           32
+     1   -3/2         16            8            8
+     1    5/2         10            5            5
+     1   -7/2          4            2            2
+     1    9/2          2            1            1
+    -1    1/2         64           32           32
+    -1   -3/2         36           18           18
+    -1    5/2          8            4            4
+    -1   -7/2          4            2            2
+
+
+      **********************************************************************
+      ************************* Orbital dimensions *************************
+      **********************************************************************
+
+                                   Irrep 1 Irrep 2   Sum
+No. of electronic orbitals (NESH):    48      56     104
+No. of positronic orbitals (NPSH):    48      56     104
+Total no. of orbitals      (NORB):    96     112     208
+ >>> Time used in PAMSET is   0.12 seconds
+
+
+   ****************************************************************************
+   ************************* Hartree-Fock calculation *************************
+   ****************************************************************************
+
+
+*** INFO *** No trial vectors found.
+ Using bare nucleus approximation for initial trial vectors.
+             Improved by a sum of atomic screening potentials.
+
+
+########## START ITERATION NO.   1 ##########   Sat Sep 15 16:11:09 2018
+
+E_HOMO...E_LUMO, symmetry 1:    50  -3.94204   51  -0.29288   52   0.01245
+E_HOMO...E_LUMO, symmetry 2:   155  -2.54761  156  -0.10664  157  -0.10600  158  -0.10600  159   0.04584
+
+=> Calculating sum of orbital energies
+It.    1    -134.1501692092      0.00D+00  0.00D+00  0.00D+00               0.49306200s   Scr. nuclei    Sat Sep 15
+
+########## START ITERATION NO.   2 ##########   Sat Sep 15 16:11:09 2018
+
+
+* GETGAB: label "GABAO2XX" not found; calling GABGEN.
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+AOfock:LL  1.00D-12   24.53%   59.49%   13.20%   11.36%   0.26028192s
+AOfock:SL  1.00D-12   32.98%   54.08%   12.31%   15.62%   2.03617907s
+AOfock:SS  1.00D-12   32.79%   57.22%   12.39%   11.49%   4.80695152s
+AOfock:GT  1.00D-12   43.16%   47.56%    0.00%    1.13%   3.05030727s
+ >>> Time used in fastjk is  11.31 seconds
+E_HOMO...E_LUMO, symmetry 1:    50  -5.05378   51  -0.36252   52   0.07886
+E_HOMO...E_LUMO, symmetry 2:   155  -3.35464  156  -0.14543  157  -0.14484  158  -0.14484  159   0.09865
+>>> Total wall time:11.44000000s, and total CPU time :11.35758900s
+
+########## END ITERATION NO.   2 ##########   Sat Sep 15 16:11:21 2018
+
+It.    2    -242.0291044759      1.08D+02  1.23D+01  1.48D+00              11.35758900s   LL SL SS GT    Sat Sep 15
+
+########## START ITERATION NO.   3 ##########   Sat Sep 15 16:11:21 2018
+
+    3 *** Differential density matrix. DCOVLP     = 1.0190
+    3 *** Differential density matrix. DVOVLP( 1) = 1.0166
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+AOfock:LL  1.00D-12   24.48%   60.52%   11.97%   11.32%   0.21879673s
+AOfock:SL  1.00D-12   32.76%   55.78%   11.07%   15.42%   1.74290562s
+AOfock:SS  1.00D-12   33.05%   59.09%   11.29%   11.30%   4.26669121s
+AOfock:GT  1.00D-12   42.97%   48.88%    0.00%    1.08%   2.87546158s
+ >>> Time used in fastjk is   9.16 seconds
+E_HOMO...E_LUMO, symmetry 1:    50  -4.99664   51  -0.35129   52   0.08147
+E_HOMO...E_LUMO, symmetry 2:   155  -3.28769  156  -0.13665  157  -0.13610  158  -0.13610  159   0.09844
+>>> Total wall time: 9.22300000s, and total CPU time : 9.20966900s
+
+########## END ITERATION NO.   3 ##########   Sat Sep 15 16:11:30 2018
+
+It.    3    -242.0480229178      1.89D-02  2.09D-01  8.89D-02   DIIS   2    9.20966900s   LL SL SS GT    Sat Sep 15
+
+########## START ITERATION NO.   4 ##########   Sat Sep 15 16:11:30 2018
+
+    4 *** Differential density matrix. DCOVLP     = 1.0015
+    4 *** Differential density matrix. DVOVLP( 1) = 1.0040
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+AOfock:LL  1.00D-12   24.67%   60.97%   11.49%   10.95%   0.21613884s
+AOfock:SL  1.00D-12   33.21%   56.07%   10.58%   15.29%   1.64816666s
+AOfock:SS  1.00D-12   33.81%   59.18%   10.94%   11.31%   4.06415367s
+AOfock:GT  1.00D-12   43.59%   48.88%    0.00%    1.04%   2.75423050s
+ >>> Time used in fastjk is   8.74 seconds
+E_HOMO...E_LUMO, symmetry 1:    50  -5.00868   51  -0.35268   52   0.08147
+E_HOMO...E_LUMO, symmetry 2:   155  -3.29962  156  -0.13762  157  -0.13706  158  -0.13706  159   0.09831
+>>> Total wall time: 8.79800000s, and total CPU time : 8.78968700s
+
+########## END ITERATION NO.   4 ##########   Sat Sep 15 16:11:39 2018
+
+It.    4    -242.0483499587      3.27D-04 -4.09D-02  2.17D-02   DIIS   3    8.78968700s   LL SL SS GT    Sat Sep 15
+
+########## START ITERATION NO.   5 ##########   Sat Sep 15 16:11:39 2018
+
+    5 *** Differential density matrix. DCOVLP     = 1.0003
+    5 *** Differential density matrix. DVOVLP( 1) = 1.0003
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+AOfock:LL  1.00D-12   25.06%   61.53%   10.89%   10.88%   0.19681168s
+AOfock:SL  1.00D-12   33.66%   56.68%    9.75%   15.17%   1.56909943s
+AOfock:SS  1.00D-12   34.44%   59.86%   10.21%   11.33%   3.76859283s
+AOfock:GT  1.00D-12   43.90%   49.38%    0.00%    1.01%   2.63359833s
+ >>> Time used in fastjk is   8.22 seconds
+E_HOMO...E_LUMO, symmetry 1:    50  -5.00848   51  -0.35268   52   0.08156
+E_HOMO...E_LUMO, symmetry 2:   155  -3.29920  156  -0.13760  157  -0.13704  158  -0.13704  159   0.09828
+>>> Total wall time: 8.27900000s, and total CPU time : 8.27157400s
+
+########## END ITERATION NO.   5 ##########   Sat Sep 15 16:11:47 2018
+
+It.    5    -242.0483716399      2.17D-05  1.09D-02  1.63D-03   DIIS   4    8.27157400s   LL SL SS GT    Sat Sep 15
+
+########## START ITERATION NO.   6 ##########   Sat Sep 15 16:11:47 2018
+
+    6 *** Differential density matrix. DCOVLP     = 1.0001
+    6 *** Differential density matrix. DVOVLP( 1) = 1.0001
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+AOfock:LL  1.00D-12   24.35%   62.59%   10.17%   10.86%   0.20312119s
+AOfock:SL  1.00D-12   33.60%   57.49%    8.94%   15.12%   1.53449631s
+AOfock:SS  1.00D-12   35.00%   60.45%    9.46%   11.47%   3.52311707s
+AOfock:GT  1.00D-12   43.42%   50.45%    0.00%    0.99%   2.54590607s
+ >>> Time used in fastjk is   7.86 seconds
+E_HOMO...E_LUMO, symmetry 1:    50  -5.00848   51  -0.35267   52   0.08158
+E_HOMO...E_LUMO, symmetry 2:   155  -3.29920  156  -0.13758  157  -0.13703  158  -0.13703  159   0.09828
+>>> Total wall time: 7.92000000s, and total CPU time : 7.91138800s
+
+########## END ITERATION NO.   6 ##########   Sat Sep 15 16:11:55 2018
+
+It.    6    -242.0483719435      3.04D-07 -5.76D-04  7.02D-05   DIIS   5    7.91138800s   LL SL SS GT    Sat Sep 15
+
+########## START ITERATION NO.   7 ##########   Sat Sep 15 16:11:55 2018
+
+    7 *** Differential density matrix. DCOVLP     = 1.0000
+    7 *** Differential density matrix. DVOVLP( 1) = 1.0000
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+AOfock:LL  1.00D-12   25.23%   62.82%    9.54%   11.32%   0.19235229s
+AOfock:SL  1.00D-12   35.30%   57.23%    8.02%   15.02%   1.41203690s
+AOfock:SS  1.00D-12   40.67%   56.41%    8.48%   12.26%   2.93764496s
+AOfock:GT  1.00D-12   45.59%   49.39%    0.00%    0.96%   2.30893707s
+ >>> Time used in fastjk is   6.91 seconds
+E_HOMO...E_LUMO, symmetry 1:    50  -5.00848   51  -0.35267   52   0.08158
+E_HOMO...E_LUMO, symmetry 2:   155  -3.29920  156  -0.13758  157  -0.13702  158  -0.13702  159   0.09827
+>>> Total wall time: 6.96000000s, and total CPU time : 6.95715700s
+
+########## END ITERATION NO.   7 ##########   Sat Sep 15 16:12:02 2018
+
+It.    7    -242.0483719498      6.38D-09  1.76D-05  9.52D-06   DIIS   6    6.95715700s   LL SL SS GT    Sat Sep 15
+
+########## START ITERATION NO.   8 ##########   Sat Sep 15 16:12:02 2018
+
+    8 *** Differential density matrix. DCOVLP     = 1.0000
+    8 *** Differential density matrix. DVOVLP( 1) = 1.0000
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+AOfock:LL  1.00D-12   25.61%   63.20%    8.95%   11.09%   0.17476654s
+AOfock:SL  1.00D-12   36.07%   57.31%    7.27%   15.02%   1.34947968s
+AOfock:SS  1.00D-12   47.14%   51.00%    7.26%   12.96%   2.47507858s
+AOfock:GT  1.00D-12   46.93%   48.68%    0.00%    0.98%   2.16157913s
+ >>> Time used in fastjk is   6.22 seconds
+E_HOMO...E_LUMO, symmetry 1:    50  -5.00848   51  -0.35267   52   0.08158
+E_HOMO...E_LUMO, symmetry 2:   155  -3.29920  156  -0.13758  157  -0.13702  158  -0.13702  159   0.09827
+>>> Total wall time: 6.27200000s, and total CPU time : 6.27082200s
+
+########## END ITERATION NO.   8 ##########   Sat Sep 15 16:12:08 2018
+
+It.    8    -242.0483719500      2.10D-10  3.54D-06  5.04D-07   DIIS   7    6.27082200s   LL SL SS GT    Sat Sep 15
+
+########## START ITERATION NO.   9 ##########   Sat Sep 15 16:12:08 2018
+
+    9 *** Differential density matrix. DCOVLP     = 1.0000
+    9 *** Differential density matrix. DVOVLP( 1) = 1.0000
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+AOfock:LL  1.00D-12   26.84%   63.93%    7.88%   10.79%   0.16194916s
+AOfock:SL  1.00D-12   43.16%   52.29%    5.91%   15.42%   1.13911438s
+AOfock:SS  1.00D-12   60.73%   38.92%    4.30%   15.12%   1.73134613s
+AOfock:GT  1.00D-12   52.10%   44.92%    0.00%    1.03%   1.78717804s
+ >>> Time used in fastjk is   4.88 seconds
+E_HOMO...E_LUMO, symmetry 1:    50  -5.00848   51  -0.35267   52   0.08158
+E_HOMO...E_LUMO, symmetry 2:   155  -3.29920  156  -0.13758  157  -0.13702  158  -0.13702  159   0.09827
+>>> Total wall time: 5.05600000s, and total CPU time : 4.92906600s
+
+########## END ITERATION NO.   9 ##########   Sat Sep 15 16:12:13 2018
+
+It.    9    -242.0483719500      7.67D-13 -1.12D-07  6.80D-08   DIIS   8    4.92906600s   LL SL SS GT    Sat Sep 15
+
+########## START ITERATION NO.  10 ##########   Sat Sep 15 16:12:13 2018
+
+   10 *** Differential density matrix. DCOVLP     = 1.0000
+   10 *** Differential density matrix. DVOVLP( 1) = 1.0000
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+AOfock:LL  1.00D-12   29.20%   62.80%    7.63%   10.69%   0.15419769s
+AOfock:SL  1.00D-12   49.31%   47.31%    4.73%   16.03%   0.97633362s
+AOfock:SS  1.00D-12   70.65%   29.26%    5.44%   16.90%   1.34253693s
+AOfock:GT  1.00D-12   56.92%   40.75%    0.00%    1.15%   1.54621124s
+ >>> Time used in fastjk is   4.08 seconds
+E_HOMO...E_LUMO, symmetry 1:    50  -5.00848   51  -0.35267   52   0.08158
+E_HOMO...E_LUMO, symmetry 2:   155  -3.29920  156  -0.13758  157  -0.13702  158  -0.13702  159   0.09827
+>>> Total wall time: 4.12400000s, and total CPU time : 4.12292300s
+
+########## END ITERATION NO.  10 ##########   Sat Sep 15 16:12:17 2018
+
+It.   10    -242.0483719500      2.56D-13 -1.54D-08  1.49D-08   DIIS   5    4.12292300s   LL SL SS GT    Sat Sep 15
+
+########## START ITERATION NO.  11 ##########   Sat Sep 15 16:12:17 2018
+
+   11 *** Differential density matrix. DCOVLP     = 1.0000
+   11 *** Differential density matrix. DVOVLP( 1) = 1.0000
+SCR        scr.thr.    Step1    Step2  Coulomb  Exchange    CPU-time
+AOfock:LL  1.00D-12   35.20%   58.59%    8.64%    9.82%   0.13566589s
+AOfock:SL  1.00D-12   56.61%   41.34%    3.62%   16.72%   0.80686188s
+AOfock:SS  1.00D-12   85.47%   14.51%    3.75%   11.20%   0.83455658s
+AOfock:GT  1.00D-12   61.07%   37.24%    0.00%    1.16%   1.35451508s
+ >>> Time used in fastjk is   3.20 seconds
+>>> Total wall time: 3.23600000s, and total CPU time : 3.24343000s
+
+########## END ITERATION NO.  11 ##########   Sat Sep 15 16:12:21 2018
+
+It.   11    -242.0483719500     -3.50D-12  3.83D-08  2.05D-09   DIIS   5    3.24343000s   LL SL SS GT    Sat Sep 15
+
+
+                                   SCF - CYCLE
+                                   -----------
+
+* Convergence on norm of error vector (gradient).
+  Desired convergence:1.000D-08
+  Allowed convergence:1.000D-08
+
+* ERGVAL - convergence in total energy
+* FCKVAL - convergence in maximum change in total Fock matrix
+* EVCVAL - convergence in error vector (gradient)
+--------------------------------------------------------------------------------------------------------------------------------
+           Energy               ERGVAL    FCKVAL    EVCVAL      Conv.acc    CPU          Integrals   Time stamp
+--------------------------------------------------------------------------------------------------------------------------------
+It.    1    -134.1501692092      0.00D+00  0.00D+00  0.00D+00               0.49306200s   Scr. nuclei    Sat Sep 15
+It.    2    -242.0291044759      1.08D+02  1.23D+01  1.48D+00              11.35758900s   LL SL SS GT    Sat Sep 15
+It.    3    -242.0480229178      1.89D-02  2.09D-01  8.89D-02   DIIS   2    9.20966900s   LL SL SS GT    Sat Sep 15
+It.    4    -242.0483499587      3.27D-04 -4.09D-02  2.17D-02   DIIS   3    8.78968700s   LL SL SS GT    Sat Sep 15
+It.    5    -242.0483716399      2.17D-05  1.09D-02  1.63D-03   DIIS   4    8.27157400s   LL SL SS GT    Sat Sep 15
+It.    6    -242.0483719435      3.04D-07 -5.76D-04  7.02D-05   DIIS   5    7.91138800s   LL SL SS GT    Sat Sep 15
+It.    7    -242.0483719498      6.38D-09  1.76D-05  9.52D-06   DIIS   6    6.95715700s   LL SL SS GT    Sat Sep 15
+It.    8    -242.0483719500      2.10D-10  3.54D-06  5.04D-07   DIIS   7    6.27082200s   LL SL SS GT    Sat Sep 15
+It.    9    -242.0483719500      7.67D-13 -1.12D-07  6.80D-08   DIIS   8    4.92906600s   LL SL SS GT    Sat Sep 15
+It.   10    -242.0483719500      2.56D-13 -1.54D-08  1.49D-08   DIIS   5    4.12292300s   LL SL SS GT    Sat Sep 15
+It.   11    -242.0483719500     -3.50D-12  3.83D-08  2.05D-09   DIIS   5    3.24343000s   LL SL SS GT    Sat Sep 15
+--------------------------------------------------------------------------------------------------------------------------------
+* Convergence after   11 iterations.
+* Average elapsed time per iteration: 
+      No 2-ints    :    0.50600000s
+
+
+                                   TOTAL ENERGY
+                                   ------------
+
+   Electronic energy                        :    -242.04837195003367
+
+   Other contributions to the total energy
+   Nuclear repulsion energy                 :       0.00000000000000
+
+   Sum of all contributions to the energy
+   Total energy                             :    -242.04837195003367
+
+
+                               WARNING from EIGCHK
+                               -------------------
+
+       1 positron states intruding
+         48   -37557.63113046        0.09935191
+
+
+                               WARNING from EIGCHK
+                               -------------------
+
+       1 positron states intruding
+         56   -37557.42029127        0.31019110
+
+
+                                   Eigenvalues
+                                   -----------
+
+
+* Block   1 in E1g:  Omega =  1/2
+  * Closed shell, f = 1.0000
+     -58.694053973  ( 2)         -5.008478531  ( 2)
+  * Open shell #1, f = 0.3750
+      -0.352665408  ( 2)
+  * Virtual eigenvalues, f = 0.0000
+       0.081582008  ( 2)          0.191027615  ( 2)          0.191051114  ( 2)          0.407136503  ( 2)          0.581378788  ( 2)
+       0.581405513  ( 2)          1.248316115  ( 2)          1.478829297  ( 2)          1.478898406  ( 2)          1.744345489  ( 2)
+       1.744365789  ( 2)          3.505615258  ( 2)          9.352289713  ( 2)         23.317804340  ( 2)         55.373349202  ( 2)
+     126.488761441  ( 2)        279.748738365  ( 2)        605.696950690  ( 2)       1295.687940048  ( 2)       2745.725591957  ( 2)
+    5732.302381373  ( 2)      11656.593602044  ( 2)      22890.180310031  ( 2)      43554.646642301  ( 2)      81612.958364216  ( 2)
+  154302.460501803  ( 2)     303488.787845255  ( 2)     647730.788887890  ( 2)    1635441.965164267  ( 2)
+
+* Block   2 in E1g:  Omega =  3/2
+  * Virtual eigenvalues, f = 0.0000
+       0.191027615  ( 2)          0.191051114  ( 2)          0.581378788  ( 2)          0.581405513  ( 2)          1.478829296  ( 2)
+       1.478898406  ( 2)          1.744345489  ( 2)          1.744365789  ( 2)
+
+* Block   3 in E1g:  Omega =  5/2
+  * Virtual eigenvalues, f = 0.0000
+       0.191027615  ( 2)          0.581405513  ( 2)          1.478829296  ( 2)          1.744345489  ( 2)          1.744365789  ( 2)
+
+* Block   4 in E1g:  Omega =  7/2
+  * Virtual eigenvalues, f = 0.0000
+       1.744345489  ( 2)          1.744365789  ( 2)
+
+* Block   5 in E1g:  Omega =  9/2
+  * Virtual eigenvalues, f = 0.0000
+       1.744365789  ( 2)
+
+* Block   1 in E1u:  Omega =  1/2
+  * Closed shell, f = 1.0000
+      -3.315577718  ( 2)         -3.299199926  ( 2)
+  * Open shell #1, f = 0.3750
+      -0.137579316  ( 2)         -0.137023396  ( 2)
+  * Virtual eigenvalues, f = 0.0000
+       0.098274673  ( 2)          0.098474941  ( 2)          0.390079101  ( 2)          0.390719309  ( 2)          0.659745626  ( 2)
+       0.659748258  ( 2)          1.113785864  ( 2)          1.115553926  ( 2)          1.837414102  ( 2)          1.837445516  ( 2)
+       3.079246981  ( 2)          3.084361195  ( 2)          8.198279861  ( 2)          8.211128768  ( 2)         20.524537382  ( 2)
+      20.555364774  ( 2)         49.671534062  ( 2)         49.752164999  ( 2)        120.545063925  ( 2)        120.790362872  ( 2)
+     302.901317212  ( 2)        303.767682983  ( 2)        812.166181733  ( 2)        815.832505244  ( 2)       2424.703847209  ( 2)
+    2443.279152469  ( 2)       8730.589487990  ( 2)       8882.180491291  ( 2)
+
+* Block   2 in E1u:  Omega =  3/2
+  * Closed shell, f = 1.0000
+      -3.299199926  ( 2)
+  * Open shell #1, f = 0.3750
+      -0.137023396  ( 2)
+  * Virtual eigenvalues, f = 0.0000
+       0.098474941  ( 2)          0.390719309  ( 2)          0.659745626  ( 2)          0.659748258  ( 2)          1.115553926  ( 2)
+       1.837414102  ( 2)          1.837445516  ( 2)          3.084361195  ( 2)          8.211128768  ( 2)         20.555364774  ( 2)
+      49.752164999  ( 2)        120.790362872  ( 2)        303.767682983  ( 2)        815.832505244  ( 2)       2443.279152469  ( 2)
+    8882.180491291  ( 2)
+
+* Block   3 in E1u:  Omega =  5/2
+  * Virtual eigenvalues, f = 0.0000
+       0.659745626  ( 2)          0.659748258  ( 2)          1.837414102  ( 2)          1.837445516  ( 2)
+
+* Block   4 in E1u:  Omega =  7/2
+  * Virtual eigenvalues, f = 0.0000
+       0.659745626  ( 2)          1.837445516  ( 2)
+
+* Occupation in fermion symmetry E1g
+  * Inactive orbitals
+     1/2 1/2
+  * Active orbitals
+     1/2
+  * Virtual orbitals
+     1/2 3/2 1/2 5/2 3/2 1/2 1/2 3/2 1/2 1/2 5/2 3/2 1/2 3/2 5/2 1/2 3/2 1/2
+     3/2 5/2 1/2 7/2 5/2 7/2 3/2 1/2 9/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2
+     1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2
+
+* Occupation in fermion symmetry E1u
+  * Inactive orbitals
+     1/2 1/2 3/2
+  * Active orbitals
+     1/2 3/2 1/2
+  * Virtual orbitals
+     1/2 3/2 1/2 1/2 1/2 3/2 7/2 1/2 3/2 5/2 5/2 1/2 3/2 1/2 3/2 1/2 3/2 1/2
+     5/2 3/2 5/2 1/2 7/2 1/2 3/2 1/2 1/2 3/2 1/2 1/2 1/2 3/2 1/2 3/2 1/2 1/2
+     1/2 3/2 1/2 3/2 1/2 1/2 3/2 1/2 1/2 3/2 1/2 1/2 3/2 1/2
+
+* Occupation of subblocks
+                       E1g:  1/2  3/2  5/2  7/2  9/2                                                        
+  closed shells (f=1.0000):    2    0    0    0    0
+  open shell #1 (f=0.3750):    1    0    0    0    0
+ virtual shells (f=0.0000):   29    8    5    2    1
+tot.num. of pos.erg shells:   32    8    5    2    1
+                       E1u:  1/2  3/2  5/2  7/2                                                             
+  closed shells (f=1.0000):    2    1    0    0
+  open shell #1 (f=0.3750):    2    1    0    0
+ virtual shells (f=0.0000):   28   16    4    2
+tot.num. of pos.erg shells:   32   18    4    2
+
+
+* HOMO - LUMO gap:
+
+    E(LUMO) :     0.08158201 au (symmetry E1g)
+  - E(HOMO) :    -0.13702340 au (symmetry E1u)
+  ------------------------------------------
+    gap     :     0.21860540 au
+
+
+
+    **************************************************************************
+    ****************************** Vector print ******************************
+    **************************************************************************
+
+
+
+   Coefficients from DFCOEF
+   ------------------------
+
+
+
+                                Fermion ircop E1g
+                                -----------------
+
+
+* Electronic eigenvalue no.  1: -58.694053972650
+====================================================
+       1  L Ag Al s       0.0000004407  0.0000000000 -0.0000000000  0.0000000000
+       2  L Ag Al s       0.0000020211  0.0000000000 -0.0000000000  0.0000000000
+       3  L Ag Al s       0.0000081947  0.0000000000 -0.0000000000  0.0000000000
+       4  L Ag Al s       0.0000308470  0.0000000000 -0.0000000000  0.0000000000
+       5  L Ag Al s       0.0001081551  0.0000000000 -0.0000000000  0.0000000000
+       6  L Ag Al s       0.0003530476  0.0000000000 -0.0000000000  0.0000000000
+       7  L Ag Al s       0.0010763834  0.0000000000 -0.0000000000  0.0000000000
+       8  L Ag Al s       0.0030798244  0.0000000000 -0.0000000000  0.0000000000
+       9  L Ag Al s       0.0082905331  0.0000000000 -0.0000000000  0.0000000000
+      10  L Ag Al s       0.0209536897  0.0000000000 -0.0000000000  0.0000000000
+      11  L Ag Al s       0.0491952674  0.0000000000 -0.0000000000  0.0000000000
+      12  L Ag Al s       0.1047822165  0.0000000000 -0.0000000000  0.0000000000
+      13  L Ag Al s       0.1937498099  0.0000000000 -0.0000000000  0.0000000000
+      14  L Ag Al s       0.2873167755  0.0000000000 -0.0000000000  0.0000000000
+      15  L Ag Al s       0.2933791150  0.0000000000 -0.0000000000  0.0000000000
+      16  L Ag Al s       0.1595520435  0.0000000000 -0.0000000000  0.0000000000
+      17  L Ag Al s       0.0291590439  0.0000000000 -0.0000000000  0.0000000000
+      18  L Ag Al s       0.0008682488  0.0000000000 -0.0000000000  0.0000000000
+      19  L Ag Al s       0.0011233694  0.0000000000 -0.0000000000  0.0000000000
+      20  L Ag Al s      -0.0001183811  0.0000000000 -0.0000000000  0.0000000000
+      21  L Ag Al s       0.0001107535  0.0000000000 -0.0000000000  0.0000000000
+      22  L Ag Al s      -0.0000840666  0.0000000000 -0.0000000000  0.0000000000
+      23  L Ag Al s       0.0000267471  0.0000000000 -0.0000000000  0.0000000000
+      24  L Ag Al s      -0.0000088198  0.0000000000 -0.0000000000  0.0000000000
+
+* Electronic eigenvalue no.  2: -5.0084785310802
+====================================================
+       1  L Ag Al s      -0.0000001149  0.0000000000 -0.0000000000  0.0000000000
+       2  L Ag Al s      -0.0000005270  0.0000000000 -0.0000000000  0.0000000000
+       3  L Ag Al s      -0.0000021381  0.0000000000 -0.0000000000  0.0000000000
+       4  L Ag Al s      -0.0000080499  0.0000000000 -0.0000000000  0.0000000000
+       5  L Ag Al s      -0.0000282411  0.0000000000 -0.0000000000  0.0000000000
+       6  L Ag Al s      -0.0000922004  0.0000000000 -0.0000000000  0.0000000000
+       7  L Ag Al s      -0.0002814885  0.0000000000 -0.0000000000  0.0000000000
+       8  L Ag Al s      -0.0008067638  0.0000000000 -0.0000000000  0.0000000000
+       9  L Ag Al s      -0.0021835208  0.0000000000 -0.0000000000  0.0000000000
+      10  L Ag Al s      -0.0055727636  0.0000000000 -0.0000000000  0.0000000000
+      11  L Ag Al s      -0.0133801564  0.0000000000 -0.0000000000  0.0000000000
+      12  L Ag Al s      -0.0297105849  0.0000000000 -0.0000000000  0.0000000000
+      13  L Ag Al s      -0.0597065781  0.0000000000 -0.0000000000  0.0000000000
+      14  L Ag Al s      -0.1035248627  0.0000000000 -0.0000000000  0.0000000000
+      15  L Ag Al s      -0.1414969658  0.0000000000 -0.0000000000  0.0000000000
+      16  L Ag Al s      -0.1029188250  0.0000000000 -0.0000000000  0.0000000000
+      17  L Ag Al s       0.0944429273  0.0000000000 -0.0000000000  0.0000000000
+      18  L Ag Al s       0.3712648482  0.0000000000 -0.0000000000  0.0000000000
+      19  L Ag Al s       0.4642182775  0.0000000000 -0.0000000000  0.0000000000
+      20  L Ag Al s       0.2152385719  0.0000000000 -0.0000000000  0.0000000000
+      21  L Ag Al s       0.0157534399  0.0000000000 -0.0000000000  0.0000000000
+      22  L Ag Al s      -0.0020450242  0.0000000000 -0.0000000000  0.0000000000
+      23  L Ag Al s       0.0011389106  0.0000000000 -0.0000000000  0.0000000000
+      24  L Ag Al s      -0.0000744382  0.0000000000 -0.0000000000  0.0000000000
+
+* Electronic eigenvalue no.  3: -0.3526654077751
+====================================================
+       1  L Ag Al s       0.0000000274  0.0000000000 -0.0000000000  0.0000000000
+       2  L Ag Al s       0.0000001257  0.0000000000 -0.0000000000  0.0000000000
+       3  L Ag Al s       0.0000005098  0.0000000000 -0.0000000000  0.0000000000
+       4  L Ag Al s       0.0000019199  0.0000000000 -0.0000000000  0.0000000000
+       5  L Ag Al s       0.0000067334  0.0000000000 -0.0000000000  0.0000000000
+       6  L Ag Al s       0.0000219931  0.0000000000 -0.0000000000  0.0000000000
+       7  L Ag Al s       0.0000671141  0.0000000000 -0.0000000000  0.0000000000
+       8  L Ag Al s       0.0001925087  0.0000000000 -0.0000000000  0.0000000000
+       9  L Ag Al s       0.0005208183  0.0000000000 -0.0000000000  0.0000000000
+      10  L Ag Al s       0.0013314716  0.0000000000 -0.0000000000  0.0000000000
+      11  L Ag Al s       0.0031986668  0.0000000000 -0.0000000000  0.0000000000
+      12  L Ag Al s       0.0071346375  0.0000000000 -0.0000000000  0.0000000000
+      13  L Ag Al s       0.0144060167  0.0000000000 -0.0000000000  0.0000000000
+      14  L Ag Al s       0.0253453567  0.0000000000 -0.0000000000  0.0000000000
+      15  L Ag Al s       0.0353637851  0.0000000000 -0.0000000000  0.0000000000
+      16  L Ag Al s       0.0267559567  0.0000000000 -0.0000000000  0.0000000000
+      17  L Ag Al s      -0.0270081651  0.0000000000 -0.0000000000  0.0000000000
+      18  L Ag Al s      -0.1120914884  0.0000000000 -0.0000000000  0.0000000000
+      19  L Ag Al s      -0.1979392597  0.0000000000 -0.0000000000  0.0000000000
+      20  L Ag Al s      -0.2002108150  0.0000000000 -0.0000000000  0.0000000000
+      21  L Ag Al s       0.1283449571  0.0000000000 -0.0000000000  0.0000000000
+      22  L Ag Al s       0.5187568889  0.0000000000 -0.0000000000  0.0000000000
+      23  L Ag Al s       0.4558265232  0.0000000000 -0.0000000000  0.0000000000
+      24  L Ag Al s       0.0894356289  0.0000000000 -0.0000000000  0.0000000000
+
+
+                                Fermion ircop E1u
+                                -----------------
+
+
+* Electronic eigenvalue no.  1: -3.3155777177851
+====================================================
+     114  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000 -0.0000427593
+     115  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000 -0.0002955792
+     116  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000 -0.0016470966
+     117  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000 -0.0070550663
+     118  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000 -0.0239534570
+     119  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000 -0.0642830211
+     120  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000 -0.1293738969
+     121  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000 -0.1884174172
+     122  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000 -0.1879212797
+     123  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000 -0.0956268299
+     124  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000 -0.0115392208
+     125  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.0008082919
+     126  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000 -0.0006768976
+     127  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.0000554771
+     179  L B2uAl py      0.0000000000  0.0000000000  0.0000427593  0.0000000000
+     180  L B2uAl py      0.0000000000  0.0000000000  0.0002955792  0.0000000000
+     181  L B2uAl py      0.0000000000  0.0000000000  0.0016470966  0.0000000000
+     182  L B2uAl py      0.0000000000  0.0000000000  0.0070550663  0.0000000000
+     183  L B2uAl py      0.0000000000  0.0000000000  0.0239534570  0.0000000000
+     184  L B2uAl py      0.0000000000  0.0000000000  0.0642830211  0.0000000000
+     185  L B2uAl py      0.0000000000  0.0000000000  0.1293738969  0.0000000000
+     186  L B2uAl py      0.0000000000  0.0000000000  0.1884174172  0.0000000000
+     187  L B2uAl py      0.0000000000  0.0000000000  0.1879212797  0.0000000000
+     188  L B2uAl py      0.0000000000  0.0000000000  0.0956268299  0.0000000000
+     189  L B2uAl py      0.0000000000  0.0000000000  0.0115392208  0.0000000000
+     190  L B2uAl py      0.0000000000  0.0000000000 -0.0008082919  0.0000000000
+     191  L B2uAl py      0.0000000000  0.0000000000  0.0006768976  0.0000000000
+     192  L B2uAl py      0.0000000000  0.0000000000 -0.0000554771  0.0000000000
+     272  L B1uAl pz      0.0000000000 -0.0000427593 -0.0000000000  0.0000000000
+     273  L B1uAl pz      0.0000000000 -0.0002955792 -0.0000000000  0.0000000000
+     274  L B1uAl pz      0.0000000000 -0.0016470966 -0.0000000000  0.0000000000
+     275  L B1uAl pz      0.0000000000 -0.0070550663 -0.0000000000  0.0000000000
+     276  L B1uAl pz      0.0000000000 -0.0239534570 -0.0000000000  0.0000000000
+     277  L B1uAl pz      0.0000000000 -0.0642830210 -0.0000000000  0.0000000000
+     278  L B1uAl pz      0.0000000000 -0.1293738969 -0.0000000000  0.0000000000
+     279  L B1uAl pz      0.0000000000 -0.1884174172 -0.0000000000  0.0000000000
+     280  L B1uAl pz      0.0000000000 -0.1879212796 -0.0000000000  0.0000000000
+     281  L B1uAl pz      0.0000000000 -0.0956268299 -0.0000000000  0.0000000000
+     282  L B1uAl pz      0.0000000000 -0.0115392208 -0.0000000000  0.0000000000
+     283  L B1uAl pz      0.0000000000  0.0008082919 -0.0000000000  0.0000000000
+     284  L B1uAl pz      0.0000000000 -0.0006768976 -0.0000000000  0.0000000000
+     285  L B1uAl pz      0.0000000000  0.0000554771 -0.0000000000  0.0000000000
+
+* Electronic eigenvalue no.  2: -3.2991999259305
+====================================================
+     114  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.0000175702
+     115  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.0001822425
+     116  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.0011039362
+     117  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.0048731633
+     118  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.0167167836
+     119  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.0450984996
+     120  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.0910794451
+     121  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.1330681596
+     122  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.1332200591
+     123  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.0682452610
+     124  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.0083427924
+     125  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000 -0.0005940024
+     126  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.0004931442
+     127  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000 -0.0000418256
+     179  L B2uAl py      0.0000000000  0.0000000000 -0.0000175702  0.0000000000
+     180  L B2uAl py      0.0000000000  0.0000000000 -0.0001822425  0.0000000000
+     181  L B2uAl py      0.0000000000  0.0000000000 -0.0011039362  0.0000000000
+     182  L B2uAl py      0.0000000000  0.0000000000 -0.0048731633  0.0000000000
+     183  L B2uAl py      0.0000000000  0.0000000000 -0.0167167836  0.0000000000
+     184  L B2uAl py      0.0000000000  0.0000000000 -0.0450984996  0.0000000000
+     185  L B2uAl py      0.0000000000  0.0000000000 -0.0910794451  0.0000000000
+     186  L B2uAl py      0.0000000000  0.0000000000 -0.1330681596  0.0000000000
+     187  L B2uAl py      0.0000000000  0.0000000000 -0.1332200591  0.0000000000
+     188  L B2uAl py      0.0000000000  0.0000000000 -0.0682452610  0.0000000000
+     189  L B2uAl py      0.0000000000  0.0000000000 -0.0083427924  0.0000000000
+     190  L B2uAl py      0.0000000000  0.0000000000  0.0005940024  0.0000000000
+     191  L B2uAl py      0.0000000000  0.0000000000 -0.0004931442  0.0000000000
+     192  L B2uAl py      0.0000000000  0.0000000000  0.0000418256  0.0000000000
+     272  L B1uAl pz      0.0000000000 -0.0000351405 -0.0000000000  0.0000000000
+     273  L B1uAl pz      0.0000000000 -0.0003644850 -0.0000000000  0.0000000000
+     274  L B1uAl pz      0.0000000000 -0.0022078724 -0.0000000000  0.0000000000
+     275  L B1uAl pz      0.0000000000 -0.0097463265 -0.0000000000  0.0000000000
+     276  L B1uAl pz      0.0000000000 -0.0334335673 -0.0000000000  0.0000000000
+     277  L B1uAl pz      0.0000000000 -0.0901969992 -0.0000000000  0.0000000000
+     278  L B1uAl pz      0.0000000000 -0.1821588902 -0.0000000000  0.0000000000
+     279  L B1uAl pz      0.0000000000 -0.2661363192 -0.0000000000  0.0000000000
+     280  L B1uAl pz      0.0000000000 -0.2664401183 -0.0000000000  0.0000000000
+     281  L B1uAl pz      0.0000000000 -0.1364905220 -0.0000000000  0.0000000000
+     282  L B1uAl pz      0.0000000000 -0.0166855848 -0.0000000000  0.0000000000
+     283  L B1uAl pz      0.0000000000  0.0011880049 -0.0000000000  0.0000000000
+     284  L B1uAl pz      0.0000000000 -0.0009862884 -0.0000000000  0.0000000000
+     285  L B1uAl pz      0.0000000000  0.0000836512 -0.0000000000  0.0000000000
+
+* Electronic eigenvalue no.  3: -3.2991999259121
+====================================================
+     114  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.0000304325
+     115  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.0003156533
+     116  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.0019120736
+     117  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.0084405664
+     118  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.0289543186
+     119  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.0781128926
+     120  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.1577542264
+     121  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.2304808132
+     122  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.2307439110
+     123  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.1182042594
+     124  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.0144501403
+     125  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000 -0.0010288424
+     126  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.0008541508
+     127  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000 -0.0000724441
+     179  L B2uAl py      0.0000000000  0.0000000000  0.0000304325  0.0000000000
+     180  L B2uAl py      0.0000000000  0.0000000000  0.0003156533  0.0000000000
+     181  L B2uAl py      0.0000000000  0.0000000000  0.0019120736  0.0000000000
+     182  L B2uAl py      0.0000000000  0.0000000000  0.0084405664  0.0000000000
+     183  L B2uAl py      0.0000000000  0.0000000000  0.0289543186  0.0000000000
+     184  L B2uAl py      0.0000000000  0.0000000000  0.0781128926  0.0000000000
+     185  L B2uAl py      0.0000000000  0.0000000000  0.1577542264  0.0000000000
+     186  L B2uAl py      0.0000000000  0.0000000000  0.2304808132  0.0000000000
+     187  L B2uAl py      0.0000000000  0.0000000000  0.2307439110  0.0000000000
+     188  L B2uAl py      0.0000000000  0.0000000000  0.1182042594  0.0000000000
+     189  L B2uAl py      0.0000000000  0.0000000000  0.0144501403  0.0000000000
+     190  L B2uAl py      0.0000000000  0.0000000000 -0.0010288424  0.0000000000
+     191  L B2uAl py      0.0000000000  0.0000000000  0.0008541508  0.0000000000
+     192  L B2uAl py      0.0000000000  0.0000000000 -0.0000724441  0.0000000000
+
+* Electronic eigenvalue no.  4: -0.1375793163201
+====================================================
+     114  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.0000081454
+     115  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.0000560136
+     116  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.0003148586
+     117  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.0013433980
+     118  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.0046378645
+     119  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.0125346588
+     120  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.0260056974
+     121  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.0377525470
+     122  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.0425842692
+     123  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.0121744214
+     124  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000 -0.1073272013
+     125  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000 -0.2311335693
+     126  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000 -0.2288880931
+     127  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000 -0.0949354297
+     179  L B2uAl py      0.0000000000  0.0000000000 -0.0000081454  0.0000000000
+     180  L B2uAl py      0.0000000000  0.0000000000 -0.0000560136  0.0000000000
+     181  L B2uAl py      0.0000000000  0.0000000000 -0.0003148586  0.0000000000
+     182  L B2uAl py      0.0000000000  0.0000000000 -0.0013433980  0.0000000000
+     183  L B2uAl py      0.0000000000  0.0000000000 -0.0046378645  0.0000000000
+     184  L B2uAl py      0.0000000000  0.0000000000 -0.0125346588  0.0000000000
+     185  L B2uAl py      0.0000000000  0.0000000000 -0.0260056974  0.0000000000
+     186  L B2uAl py      0.0000000000  0.0000000000 -0.0377525470  0.0000000000
+     187  L B2uAl py      0.0000000000  0.0000000000 -0.0425842692  0.0000000000
+     188  L B2uAl py      0.0000000000  0.0000000000 -0.0121744214  0.0000000000
+     189  L B2uAl py      0.0000000000  0.0000000000  0.1073272013  0.0000000000
+     190  L B2uAl py      0.0000000000  0.0000000000  0.2311335693  0.0000000000
+     191  L B2uAl py      0.0000000000  0.0000000000  0.2288880931  0.0000000000
+     192  L B2uAl py      0.0000000000  0.0000000000  0.0949354297  0.0000000000
+     272  L B1uAl pz      0.0000000000  0.0000081454 -0.0000000000  0.0000000000
+     273  L B1uAl pz      0.0000000000  0.0000560136 -0.0000000000  0.0000000000
+     274  L B1uAl pz      0.0000000000  0.0003148586 -0.0000000000  0.0000000000
+     275  L B1uAl pz      0.0000000000  0.0013433979 -0.0000000000  0.0000000000
+     276  L B1uAl pz      0.0000000000  0.0046378644 -0.0000000000  0.0000000000
+     277  L B1uAl pz      0.0000000000  0.0125346585 -0.0000000000  0.0000000000
+     278  L B1uAl pz      0.0000000000  0.0260056968 -0.0000000000  0.0000000000
+     279  L B1uAl pz      0.0000000000  0.0377525462 -0.0000000000  0.0000000000
+     280  L B1uAl pz      0.0000000000  0.0425842683 -0.0000000000  0.0000000000
+     281  L B1uAl pz      0.0000000000  0.0121744211 -0.0000000000  0.0000000000
+     282  L B1uAl pz      0.0000000000 -0.1073271990 -0.0000000000  0.0000000000
+     283  L B1uAl pz      0.0000000000 -0.2311335644 -0.0000000000  0.0000000000
+     284  L B1uAl pz      0.0000000000 -0.2288880882 -0.0000000000  0.0000000000
+     285  L B1uAl pz      0.0000000000 -0.0949354277 -0.0000000000  0.0000000000
+
+* Electronic eigenvalue no.  5: -0.1370233960374
+====================================================
+     114  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.0000058116
+     115  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.0000598394
+     116  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.0003658491
+     117  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.0016084033
+     118  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.0056101935
+     119  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.0152425388
+     120  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.0317281832
+     121  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.0462179176
+     122  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.0523036318
+     123  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.0155112553
+     124  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000 -0.1304111860
+     125  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000 -0.2826424743
+     126  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000 -0.2808511221
+     127  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000 -0.1174073486
+     179  L B2uAl py      0.0000000000  0.0000000000  0.0000058116  0.0000000000
+     180  L B2uAl py      0.0000000000  0.0000000000  0.0000598394  0.0000000000
+     181  L B2uAl py      0.0000000000  0.0000000000  0.0003658491  0.0000000000
+     182  L B2uAl py      0.0000000000  0.0000000000  0.0016084033  0.0000000000
+     183  L B2uAl py      0.0000000000  0.0000000000  0.0056101935  0.0000000000
+     184  L B2uAl py      0.0000000000  0.0000000000  0.0152425388  0.0000000000
+     185  L B2uAl py      0.0000000000  0.0000000000  0.0317281832  0.0000000000
+     186  L B2uAl py      0.0000000000  0.0000000000  0.0462179176  0.0000000000
+     187  L B2uAl py      0.0000000000  0.0000000000  0.0523036318  0.0000000000
+     188  L B2uAl py      0.0000000000  0.0000000000  0.0155112553  0.0000000000
+     189  L B2uAl py      0.0000000000  0.0000000000 -0.1304111860  0.0000000000
+     190  L B2uAl py      0.0000000000  0.0000000000 -0.2826424743  0.0000000000
+     191  L B2uAl py      0.0000000000  0.0000000000 -0.2808511221  0.0000000000
+     192  L B2uAl py      0.0000000000  0.0000000000 -0.1174073486  0.0000000000
+
+* Electronic eigenvalue no.  6: -0.1370233960358
+====================================================
+     114  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000 -0.0000033553
+     115  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000 -0.0000345483
+     116  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000 -0.0002112231
+     117  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000 -0.0009286121
+     118  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000 -0.0032390467
+     119  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000 -0.0088002838
+     120  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000 -0.0183182749
+     121  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000 -0.0266839268
+     122  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000 -0.0301975155
+     123  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000 -0.0089554273
+     124  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.0752929323
+     125  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.1631837063
+     126  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.1621494687
+     127  L B3uAl px      0.0000000000  0.0000000000 -0.0000000000  0.0677851634
+     179  L B2uAl py      0.0000000000  0.0000000000  0.0000033553  0.0000000000
+     180  L B2uAl py      0.0000000000  0.0000000000  0.0000345483  0.0000000000
+     181  L B2uAl py      0.0000000000  0.0000000000  0.0002112231  0.0000000000
+     182  L B2uAl py      0.0000000000  0.0000000000  0.0009286121  0.0000000000
+     183  L B2uAl py      0.0000000000  0.0000000000  0.0032390467  0.0000000000
+     184  L B2uAl py      0.0000000000  0.0000000000  0.0088002838  0.0000000000
+     185  L B2uAl py      0.0000000000  0.0000000000  0.0183182749  0.0000000000
+     186  L B2uAl py      0.0000000000  0.0000000000  0.0266839268  0.0000000000
+     187  L B2uAl py      0.0000000000  0.0000000000  0.0301975155  0.0000000000
+     188  L B2uAl py      0.0000000000  0.0000000000  0.0089554273  0.0000000000
+     189  L B2uAl py      0.0000000000  0.0000000000 -0.0752929323  0.0000000000
+     190  L B2uAl py      0.0000000000  0.0000000000 -0.1631837063  0.0000000000
+     191  L B2uAl py      0.0000000000  0.0000000000 -0.1621494687  0.0000000000
+     192  L B2uAl py      0.0000000000  0.0000000000 -0.0677851634  0.0000000000
+     272  L B1uAl pz      0.0000000000  0.0000067106 -0.0000000000  0.0000000000
+     273  L B1uAl pz      0.0000000000  0.0000690965 -0.0000000000  0.0000000000
+     274  L B1uAl pz      0.0000000000  0.0004224462 -0.0000000000  0.0000000000
+     275  L B1uAl pz      0.0000000000  0.0018572242 -0.0000000000  0.0000000000
+     276  L B1uAl pz      0.0000000000  0.0064780935 -0.0000000000  0.0000000000
+     277  L B1uAl pz      0.0000000000  0.0176005679 -0.0000000000  0.0000000000
+     278  L B1uAl pz      0.0000000000  0.0366365505 -0.0000000000  0.0000000000
+     279  L B1uAl pz      0.0000000000  0.0533678547 -0.0000000000  0.0000000000
+     280  L B1uAl pz      0.0000000000  0.0603950323 -0.0000000000  0.0000000000
+     281  L B1uAl pz      0.0000000000  0.0179108550 -0.0000000000  0.0000000000
+     282  L B1uAl pz      0.0000000000 -0.1505858677 -0.0000000000  0.0000000000
+     283  L B1uAl pz      0.0000000000 -0.3263674196 -0.0000000000  0.0000000000
+     284  L B1uAl pz      0.0000000000 -0.3242989441 -0.0000000000  0.0000000000
+     285  L B1uAl pz      0.0000000000 -0.1355703297 -0.0000000000  0.0000000000
+===========================================================================
+* PCMOUT: Coefficients read from unformatted DFCOEF 
+          and written to formatted DFPCMO
+===========================================================================
+
+*****************************************************
+********** E N D   of   D I R A C  output  **********
+*****************************************************
+
+
+ 
+     Date and time (Mac OSX): Sat Sep 15 16:12:21 2018
+     Host name              : Campic.local                            
+
+>>>> Node 0, utime: 71, stime: 0, minflt: 30584, majflt: 0, nvcsw: 9, nivcsw: 10704, maxrss: 112717824
+>>>> Total WALL time used in DIRAC: 1min12s
+  
+  Dynamical Memory Usage Summary for Master
+  
+  Mean allocation size (Mb) :       112.85
+  
+  Largest          10  allocations
+  
+      488.28 Mb at subroutine unknown                                    for WORK in PAMANA                            
+      488.28 Mb at subroutine unknown                                    for WORK in PSISCF                            
+      488.28 Mb at subroutine unknown                                    for WORK in PAMSET - 2                        
+      488.28 Mb at subroutine unknown                                    for WORK in GMOTRA                            
+      488.28 Mb at subroutine unknown                                    for WORK in PAMSET - 1                        
+      488.28 Mb at subroutine unknown                                    for test allocation of work array in DIRAC mai
+        1.23 Mb at subroutine unknown                                    for CMO in PCMOUT                             
+        1.23 Mb at subroutine unknown                                    for buf in butobs                             
+        0.76 Mb at subroutine unknown                                    for PAMINP WORK array                         
+        0.61 Mb at subroutine unknown                                    for unnamed variable                          
+  
+  Peak memory usage:       489.51 MB
+  Peak memory usage:        0.478 GB
+       reached at subroutine : unknown                                   
+              for variable   : buf in butobs                             
+  
+ MEMGET high-water mark:     0.00 MB
+
+*****************************************************
+DIRAC pam run in /Users/campic/Dirac-programm/RKB/Al
