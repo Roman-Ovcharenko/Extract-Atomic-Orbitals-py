@@ -21,7 +21,7 @@ class Basis(object):
         self.at_symb = at_symb
         sizes_L, sizes_symb_L = self._get_size("large", file_prop)
         sizes_S, sizes_symb_S = self._get_size("small", file_prop)
-        self.exps = self._get_exp(file_exp)
+        self.Z, self.exps = self._get_exp(file_exp)
         (self.size,  self.symm, self.orb_symm, self.exp, 
          self.lx, self.ly, self.lz, self.ltot) = self._gen_basis(file_prop, sizes_L, 
                                                              sizes_symb_L, sizes_S)
@@ -68,7 +68,12 @@ class Basis(object):
             while self.at_symb != at_char:
                 line = f.readline()
                 at_char = line[1:].strip()
-            f.readline()
+            line = f.readline()
+            lst_str = line.split()
+            if lst_str[0] == "a":
+                Z = int(lst_str[1])
+            else:
+                raise Exception("The core charge is not found in the Dirac basis file")
             exp_s = self._get_exp_sym(f, " s ")
             exp_p = self._get_exp_sym(f, " p ")
             exp_d = self._get_exp_sym(f, " d ")
@@ -77,7 +82,7 @@ class Basis(object):
             exp_h = self._get_exp_sym(f, " h ")
             exp_i = self._get_exp_sym(f, " i ")
 
-        return [exp_s, exp_p, exp_d, exp_f, exp_g, exp_h, exp_i]
+        return Z, [exp_s, exp_p, exp_d, exp_f, exp_g, exp_h, exp_i]
 
 ##################################################################################################
 # Rearrange a basis set into a list (introduce a general serial number for each basis function) 

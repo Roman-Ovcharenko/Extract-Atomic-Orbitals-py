@@ -33,7 +33,8 @@ from others import dfactorial as dfact
 class Orbital(object):
 
     def __init__(self, file_prop, energy, parity, jj, mj, ll, bas, iorb, num_orb_ger, at_symb,
-                cf_La, cf_Lb, nn, wrong_norm_orbitals):
+                cf_La, cf_Lb, nn, wrong_norm_orbitals, corr_norm_orbitals_symb,
+                corr_norm_orbitals_val):
         self.file_prop = file_prop
         self.energy = energy
         self.parity = parity
@@ -53,7 +54,8 @@ class Orbital(object):
         phi_up = reconstruct_rad_orbital(cf_rad_up, self.exps, self.Rc, self.ll)
         phi_down = reconstruct_rad_orbital(cf_rad_down, self.exps, self.Rc, self.ll)
         self.phi = reconstruct_rad_orbital(self.cf_rad, self.exps, self.Rc, self.ll)
-        self.norm_avg = self._rad_orbitals_printout(phi_up, phi_down, self.phi, wrong_norm_orbitals)
+        self.norm_avg = self._rad_orbitals_printout(phi_up, phi_down, self.phi, wrong_norm_orbitals, 
+                bas, corr_norm_orbitals_symb, corr_norm_orbitals_val)
         return None
 
 ##################################################################################################
@@ -224,7 +226,8 @@ class Orbital(object):
 # Print the detailed information about radial parts of atomic orbitals to the screen and 
 # the radial parts of atomic orbitals themselvev to the corresponding files
 ##################################################################################################
-    def _rad_orbitals_printout(self, phi_up, phi_down, phi_avg, wrong_norm_orbitals):
+    def _rad_orbitals_printout(self, phi_up, phi_down, phi_avg, wrong_norm_orbitals, bas,
+            corr_norm_orbitals_symb, corr_norm_orbitals_val):
         norm_up = integrate(self.Rc, phi_up, phi_up)
         norm_down = integrate(self.Rc, phi_down, phi_down)
         norm_avg = integrate(self.Rc, phi_avg, phi_avg)
@@ -234,9 +237,25 @@ class Orbital(object):
         beta = -0.5
         cl_down = clebsch(self.jj, self.mj, self.ll, int(self.mj-beta), abs(beta), beta)
 
-        if ((abs(norm_up - cl_up**2) > 0.1*cl_up**2+0.01) 
-            or (abs(norm_down - cl_down**2) > 0.1*cl_down**2+0.01)):
+# Define the deviation of the orbital norm acceptable due to relativism
+        del_norm = 0.003 * bas.Z / self.nn
+        diff_up = abs(norm_up - cl_up**2) 
+        diff_down = abs(norm_down - cl_down**2)
+
+        if abs(cl_up) < 1e-10:
+            diff_rel_up = 0.0
+        else:
+            diff_rel_up = 100 * diff_up / cl_up**2
+        if abs(cl_down) < 1e-10:
+            diff_rel_down = 0.0
+        else:
+            diff_rel_down = 100 * diff_down / cl_down**2
+
+        if (diff_up > del_norm*cl_up**2+0.015) or (diff_down > del_norm*cl_down**2+0.015):
             wrong_norm_orbitals.append(self.orb_sym)
+        else:
+            corr_norm_orbitals_symb.append(self.orb_sym)
+            corr_norm_orbitals_val.append(max(diff_rel_up, diff_rel_down))
 
         if self.iorb == 0:
             print("  iorb       orb_sym       norm-up   clebsch-up^2   norm-down"

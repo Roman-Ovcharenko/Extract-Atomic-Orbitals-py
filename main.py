@@ -66,6 +66,8 @@ print()
 
 # Run a loop over different atomic species
 wrong_norm_orbitals = []
+corr_norm_orbitals_symb = [] 
+corr_norm_orbitals_val = []
 tot_time_begin = time.time()
 for at_symb in root:
     time_begin = time.time()
@@ -78,7 +80,8 @@ for at_symb in root:
     file_ElSA = at_symb + "-dyall-v4z.h"
     bas = basis.Basis(file_prop, file_exp, at_symb)
     bas.printout()
-    at = atom.Atom(file_prop, bas, at_symb, wrong_norm_orbitals)
+    at = atom.Atom(file_prop, bas, at_symb, wrong_norm_orbitals, corr_norm_orbitals_symb,
+                   corr_norm_orbitals_val)
     at.printout()
     at.print_ElSA_file(file_ElSA)
     os.chdir("..")
@@ -90,6 +93,12 @@ print("{:=^80s}\n".format(" END "))
 print("The number of orbitals with wrong norm: {}:".format(len(wrong_norm_orbitals)))
 for orb in wrong_norm_orbitals:
     print(orb)
+print()
+max_el = max(corr_norm_orbitals_val)
+index_max = corr_norm_orbitals_val.index(max_el)
+orb_max_el = corr_norm_orbitals_symb[index_max]
+print("The maximum relative deviation of the norm was observed for the {} orbitals and it is: {} %"
+        .format(orb_max_el, max_el))
 print()
 tot_time_end = time.time()
 others.print_time(tot_time_end - tot_time_begin)

@@ -20,7 +20,8 @@ from others import dfactorial as dfact
 ###################################################################################################
 class Atom(object):
 
-    def __init__(self, file_prop, bas, at_symb,  wrong_norm_orbitals):
+    def __init__(self, file_prop, bas, at_symb,  wrong_norm_orbitals, corr_norm_orbitals_symb,
+                 corr_norm_orbitals_val):
         self.file_prop = file_prop
         self.at_symb = at_symb
         self.bas = bas
@@ -31,7 +32,8 @@ class Atom(object):
             self.orbitals.append(orbital.Orbital(self.file_prop, energies[iorb], parities[iorb], 
                                                  jjs[iorb], mjs[iorb], lls[iorb], self.bas, iorb, 
                                                  self.num_orb_ger, self.at_symb, cfs_La[iorb],
-                                                 cfs_Lb[iorb], nns[iorb], wrong_norm_orbitals))
+                                                 cfs_Lb[iorb], nns[iorb], wrong_norm_orbitals,
+                                                 corr_norm_orbitals_symb, corr_norm_orbitals_val))
         orb_avg = self._average_over_mj()
         self.num_red_orb = len(orb_avg)
         self.red_orbitals = []
@@ -78,6 +80,8 @@ class Atom(object):
         f.write("!========== Element specific information =================\n")
         f.write('   sym_at = "{:>3s}"\n'.format(self.at_symb))
         f.write('   Norb = {}\n'.format(self.num_red_orb))
+        f.write('   Nsym = {}\n'.format(ll_max+1))
+        f.write('   allocate(Nbas(Nsym))\n')
 
         str_ = "   Nbas(1:Nsym) = (/ {}".format(len(self.bas.exps[0]))
         for il in range(1, ll_max+1):
@@ -138,21 +142,26 @@ class Atom(object):
 # Read atomic parameters from the Dirac output file
 ##################################################################################################
     def _get_param(self):
-        energies_ger = []
-        energies_ung = []
+        energies_ger_tmp = []
+        energies_ung_tmp = []
         with open(self.file_prop) as f:
             line = f.readline()
             while line:
                 line = f.readline()
                 if "Occupation in fermion symmetry E1g" in line:
-                    num_orb_ger, mjs_ger, parities_ger = self._get_num_orb(f, "gerade")
+                    num_orb_ger_tmp, mjs_ger_tmp, parities_ger_tmp = self._get_num_orb(f, "gerade")
                 elif "Occupation in fermion symmetry E1u" in line:
-                    num_orb_ung, mjs_ung, parities_ung = self._get_num_orb(f, "ungerade")
+                    num_orb_ung_tmp, mjs_ung_tmp, parities_ung_tmp = self._get_num_orb(f, "ungerade")
 
                 if "Fermion ircop E1g" in line: 
-                    energies_ger = self._get_energies(f, num_orb_ger)
+                    energies_ger_tmp = self._get_energies(f, num_orb_ger_tmp)
                 if "Fermion ircop E1u" in line: 
-                    energies_ung = self._get_energies(f, num_orb_ung)
+                    energies_ung_tmp = self._get_energies(f, num_orb_ung_tmp)
+
+        num_orb_ger, mjs_ger, parities_ger, energies_ger = self._get_rid_of_active_orbitals(
+                num_orb_ger_tmp, mjs_ger_tmp, parities_ger_tmp, energies_ger_tmp)
+        num_orb_ung, mjs_ung, parities_ung, energies_ung = self._get_rid_of_active_orbitals(
+                num_orb_ung_tmp, mjs_ung_tmp, parities_ung_tmp, energies_ung_tmp)
 
         cfs_La_ger = []
         cfs_Lb_ger = []
@@ -191,6 +200,26 @@ class Atom(object):
 
         return (energies, jjs, lls, mjs, nns, parities, num_orb_ger, 
                 num_orb_ung, num_orb, cfs_La, cfs_Lb)
+
+##################################################################################################
+# Get rid of active orbitals
+##################################################################################################
+    def _get_rid_of_active_orbitals(self, num_orb_in, mjs_in, parities_in, energies_in):
+
+# Define the threshold to distinguish between active and closed orbitals
+        threshold = -0.09 * self.bas.Z
+
+        mjs_out = []
+        parities_out = []
+        energies_out = []
+        for iorb in range(num_orb_in):
+            if energies_in[iorb] < threshold:
+                mjs_out.append(mjs_in[iorb])
+                parities_out.append(parities_in[iorb])
+                energies_out.append(energies_in[iorb])
+
+        num_orb_out = len(mjs_out)
+        return num_orb_out, mjs_out, parities_out, energies_out
 
 ##################################################################################################
 # Guess n quantum numbers basing on the lists of j, l, mj and energies
