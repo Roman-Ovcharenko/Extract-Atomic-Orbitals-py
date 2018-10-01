@@ -1,0 +1,80 @@
+\KOMAoptions{numbers=noenddot}
+\usepackage{amsmath,amssymb,amsfonts,amsthm,epigraph,scrpage2}
+\usepackage[english,ngerman]{babel}
+\usepackage{centernot}
+\usepackage{multirow}
+\usepackage{pdfpages}
+\usepackage[version=3]{mhchem}
+\usepackage{placeins}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{afterpage}
+\usepackage{longtable}
+\usepackage{cite}%References
+
+\definecolor{Cayenne}{rgb}{0.502,0.0,0.0}
+\definecolor{Steel}{rgb}{0.4,0.4,0.4}
+\definecolor{blue}{rgb}{0,0,1}
+\definecolor{Tri_blue}{rgb}{0.039,0.5098,0.8}
+\definecolor{Tri_yellow}{rgb}{0.5529,0.5451,0.0549}
+
+\usepackage[format=plain,singlelinecheck=false, font={sf,small},labelfont={bf,color=Cayenne}]{caption}
+\DeclareCaptionLabelSeparator{cayenne_period}{\textcolor{Cayenne}{:} }
+\captionsetup{labelsep=cayenne_period}
+
+\DeclareSymbolFont{newfont}{OML}{cmm}{m}{it}% Computer Modern math font
+\DeclareMathSymbol{\eps}{3}{newfont}{15}% Symbol 15
+
+% Colors
+%\addtokomafont{chapter}{\color{Cayenne}}
+%\addtokomafont{section}{\color{Cayenne}}
+%\addtokomafont{subsection}{\color{Cayenne}}
+%\addtokomafont{subsubsection}{\color{Cayenne}}
+%\addtokomafont{paragraph}{\color{Cayenne}}
+%\addtokomafont{disposition}{\color{Cayenne}}
+%\addtokomafont{pagehead}{\color{Cayenne}}
+%\renewcommand{\pnumfont}{\color{Cayenne}} 
+%\addtokomafont{headsepline}{\color{Cayenne}} 
+%\pagestyle{scrheadings}
+
+% Textcolor for chapters in TOC
+\makeatletter
+\let\stdl@chapter\l@chapter
+\renewcommand*{\l@chapter}[2]{%
+  \stdl@chapter{\textcolor{black}{#1}}{\textcolor{black}{#2}}}
+\makeatother
+
+%  labels in description environments
+\renewcommand{\descriptionlabel}{\hspace\labelsep{}\sffamily\small\bfseries{}\color{Steel}{}}
+
+\usepackage{acronym}
+\usepackage{colortbl}
+
+\usepackage[leftcaption]{sidecap} % inner, outer,left,right
+\sidecaptionvpos{figure}{t}
+
+\usepackage[a4paper,textwidth=448.13095pt,height=606.5pt,left=30mm,top=40mm]{geometry}
+\DeclareMathAlphabet\mathbfcal{OMS}{cmsy}{b}{n}
+
+\newcommand{\LN}[1]{\,\textrm{ln}\left( #1 \right)\,}
+\newcommand{\Ln}[1]{\,\textrm{ln}\,#1\,}
+\newcommand{\EXP}[1]{\,\textrm{exp}\left[ #1 \right]\,}
+\newcommand{\AVG}[1]{\left< #1 \right>}
+\newcommand{\ABS}[1]{\left| #1 \right|}
+\newcommand{\TG}[1]{\,\textrm{tan}\left( #1 \right)\,}
+\newcommand{\ITG}[1]{\,\textrm{tan}^{-1}\left( #1 \right)\,}
+\newcommand{\ERF}[1]{\,\textrm{erf}\left( #1 \right)\,}
+\newcommand{\SCP}[2]{\,\langle \, #1 \, | \, #2 \, \rangle\,}
+\newcommand{\MXEL}[3]{\,\langle \, #1 \, | \, #2 \, | \, #3 \, \rangle \,}
+\newcommand{\BRA}[1]{\,| \, #1 \, \rangle\,}
+\newcommand{\KET}[1]{\,\langle \, #1 \, |\,}
+\newcommand{\VEC}[1]{\mathbf{#1}}
+\newcommand{\TRMX}[1]{\,\textrm{Tr}\left[ \, #1 \, \right]\,}
+\newcommand{\MX}[1]{\mathcal{#1}}
+\newcommand{\SMX}[1]{\mathbfcal{#1}}
+
+%\hypersetup{urlcolor=Cayenne}
+
+\graphicspath{{Figs/}}
+
+

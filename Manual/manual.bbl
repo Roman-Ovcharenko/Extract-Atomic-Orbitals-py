@@ -1,0 +1,21 @@
+\begin{thebibliography}{1}
+\providecommand*{\bibinfo}[2]{#2}
+\providecommand*{\eprint}[1]{#1}
+\providecommand*{\url}[1]{#1}
+\bibitem{Dirac_program}
+\url{http://www.diracprogram.org/doku.php}.
+\bibitem{Dirac:basis_set}
+\url{http://www.diracprogram.org/doc/master/tutorials/relbas.html}.
+\bibitem{ElSA:site}
+\url{https://elsaspectroscopy.wordpress.com/about/}.
+\bibitem{Varshalovich:75}
+\bibinfo{author}{D.~A. Varshalovich}, \bibinfo{author}{A.~N. Moskalev}, and
+  \bibinfo{author}{V.~K. Khersonskii}, \bibinfo{title}{\emph{Quantum Theory of
+  Angular Momentum}} (\bibinfo{publisher}{Nauka}, Leningrad, USSR,
+  \bibinfo{year}{1975}).
+\bibitem{Frisch:95}
+\bibinfo{author}{H.~B. Schlegel} and \bibinfo{author}{M.~J. Frisch},
+  \bibinfo{journal}{Int. J. Quantum Chem.} \bibinfo{volume}{\textbf{54}},
+  \bibinfo{pages}{83} (\bibinfo{date}{1995}).
+
+\end{thebibliography}

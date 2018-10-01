@@ -1,0 +1,235 @@
+\documentclass[12pt,openright,twoside,headsepline,bibtotoc]{scrbook}
+\input{adjustment.tex}
+
+\begin{document}
+\selectlanguage{english}
+
+\chapter{Preparation of the ElSA input file from the Dirac output}
+
+\section{The main part}\label{sec:main}
+
+A relativistic atomic wave function $\BRA{n l j m \beta}$ in the Dirac program~\cite{Dirac_program} is expressed as a series of the Cartesian Gaussian basis set functions $Z_{l_x l_y l_z \gamma}(\VEC{r})$: 
+%
+\begin{equation}
+\BRA{n l j m \beta} = \sum_{l_x l_y l_z \gamma} S_{n l j m \beta}(l_x, l_y, l_z, \gamma) \cdot Z_{l_x l_y l_z \gamma}(\VEC{r}) \cdot \BRA{\beta},
+\label{eq:phi_Dirac}
+\end{equation}
+where $S_{n l j m \beta}(l_x, l_y, l_z, \gamma)$ are expansion coefficients, $\BRA{\beta}$ -- spin functions, $\{n l j m\}$ -- quantum numbers, and $\{ l_x, l_y, l_z, \gamma \}$ number the basis set functions. The basis set functions in the Dirac program are given as follows~\cite{Dirac:basis_set}:
+%
+\begin{equation}
+\left\{
+\begin{aligned}
+&Z_{l_x l_y l_z \gamma}(\VEC{r}) = N^\gamma_{l_x l_y l_z} \cdot x^{l_x} y^{l_y} z^{l_z} \cdot e^{-\gamma r^2}
+\\
+&N^\gamma_{l_x l_y l_z} = \left(2 \sqrt{\gamma} \right)^l \left( \frac{2 \gamma}{\pi} \right)^\frac{3}{4} .
+\end{aligned}
+\right.
+\end{equation}
+%
+They are normalized~\cite{Dirac:basis_set}:
+%
+\begin{equation}
+\SCP{Z_{l_x l_y l_z \gamma}(\VEC{r})}{Z_{l_x l_y l_z \gamma}(\VEC{r})}_\VEC{r} = F_{l_x l_y l_z} = (2l_x-1)!! \cdot (2l_y-1)!! \cdot (2l_z-1)!! 
+\end{equation}
+%
+
+Since in the ElSA code the same relativistic atomic wave function is written in the different way~\cite{ElSA:site}:
+\begin{equation}
+\BRA{n l j m \beta} = \frac{P_{n l j}(r)}{r} \cdot C^{j m}_{l (m-\beta) \frac{1}{2} \beta} \cdot Y_{l (m-\beta)}(\Omega) \cdot \BRA{\beta} ,
+\label{eq:phi_ElSA}
+\end{equation}
+%
+the following connection between both equations (\ref{eq:phi_Dirac}) and (\ref{eq:phi_ElSA}) may be established:
+\begin{equation}
+P_{n l j}^{(m \beta)}(r) = \frac{\VEC{r}}{C^{j m}_{l (m-\beta) \frac{1}{2} \beta}} \cdot \sum_{l_x l_y l_z \gamma} S_{n l j m \beta}(l_x, l_y, l_z, \gamma) \cdot \SCP{Y_{l (m-\beta)}(\Omega)}{Z_{l_x l_y l_z \gamma}(\VEC{r})}_\Omega ,
+\label{eq:Pmbeta}
+\end{equation}
+%
+where $C^{j m}_{l (m-\beta) \frac{1}{2} \beta}$ are Clebsch-Gordan coefficients~\cite{Varshalovich:75}, $\SCP{}{}_\Omega$ is a scalar product only over angular variables, and $P_{n l j}^{(m \beta)}(r)$ supposes that the radial wave function in the Dirac code depends on the $m$ and $\beta$ quantum numbers as well. 
+
+It is convenient to choose another normalization for the Cartesian Gaussians:
+%
+\begin{equation}
+Z_{l_x l_y l_z \gamma}(\VEC{r}) = \frac{N^\gamma_{l_x l_y l_z}}{N(l_x, l_y, l_z, \gamma)} \cdot G_{l_x l_y l_z \gamma}(\VEC{r}) ,
+\label{eq:Z}
+\end{equation}
+%
+where new Gaussians $G_{l_x l_y l_z \gamma}(\VEC{r})$ are expressed as follows~\cite{Frisch:95}:
+%
+\begin{equation}
+\left\{
+\begin{aligned}
+&G_{l_x l_y l_z \gamma}(\VEC{r}) = N(l_x, l_y, l_z, \gamma) \cdot x^{l_x} y^{l_y} z^{l_z} \cdot e^{-\gamma r^2}
+\\
+&N(l_x, l_y, l_z, \gamma) = 2^l \sqrt{ \frac{ l_x! \cdot l_y! \cdot l_z! \cdot \gamma^{l + \frac{3}{2}}}{(2 l_x)! \cdot (2 l_y)! \cdot (2 l_z)! \cdot  \pi^\frac{3}{2}} } .
+\end{aligned}
+\right.
+\end{equation}
+%
+They in its turn may be expressed through the spherical Gaussian functions $\tilde G_{l m_l \gamma}(\VEC{r})$(see~\cite{Frisch:95}):
+%
+\begin{equation}
+G_{l_x l_y l_z \gamma}(\VEC{r}) = c^{-1}(l, m_l, l_x, l_y, l_z) \cdot \tilde G_{l m_l \gamma}(\VEC{r}) ,
+\label{eq:G}
+\end{equation}
+%
+where
+%
+\begin{equation}
+\left\{
+\begin{aligned}
+&\tilde G_{l m_l \gamma}(\VEC{r}) = \tilde N(l, \gamma) \cdot r^l \cdot e^{-\gamma r^2} \cdot Y_{l m_l}(\Omega)
+\\
+&\tilde N(l, \gamma) = \sqrt{ \frac{2^{2l+3} \cdot (l+1)! \cdot \gamma^{l+\frac{3}{2}}}{(2l+2)! \cdot \sqrt{\pi}} } .
+\end{aligned}
+\right.
+\label{eq:tilde_G}
+\end{equation}
+%
+The proportionality factor in eq.~(\ref{eq:G}) is expressed as follows:
+%
+\begin{equation}
+\left\{
+\begin{aligned}
+&c^{-1}(l, m_l, l_x, l_y, l_z) = \sum_{l_x^\prime + l_y^\prime + l_z^\prime = l} S(l_x, l_y, l_z, l_x^\prime, l_y^\prime, l_z^\prime) \cdot \left\{ c(l, m_l, l_x^\prime, l_y^\prime, l_z^\prime) \right\}^\ast
+\\
+&l = l_x + l_y + l_z ,
+\end{aligned}
+\right.
+\end{equation}
+%
+where overlap matrix $S(l_x, l_y, l_z, l_x^\prime, l_y^\prime, l_z^\prime)$ has the form:
+%
+\begin{multline}
+S(l_x, l_y, l_z, l_x^\prime, l_y^\prime, l_z^\prime) = 
+\\
+= \left\{
+\begin{aligned}
+&\frac{(l_x + l_x^\prime)! \cdot (l_y + l_y^\prime)! \cdot (l_z + l_z^\prime)! }{(\frac{l_x + l_x^\prime}{2})! \cdot (\frac{l_y + l_y^\prime}{2})! \cdot (\frac{l_z + l_z^\prime}{2})!} \cdot \sqrt{ \frac{l_x! \cdot l_y! \cdot l_z! \cdot l_x^\prime! \cdot l_y^\prime! \cdot l_z^\prime!}{(2l_x)! \cdot (2l_y)! \cdot (2l_z)! \cdot (2l_x^\prime)! \cdot (2l_y^\prime)! \cdot (2l_z^\prime)!} }
+\\
+&0, \qquad \frac{l_x + l_x^\prime}{2} \notin \mathbb{Z}, \quad \frac{l_y + l_y^\prime}{2} \notin \mathbb{Z}, \quad \frac{l_z + l_z^\prime}{2} \notin \mathbb{Z} ,
+\end{aligned}
+\right.
+\end{multline}
+%
+and the inversed coefficients are:
+%
+\begin{multline}
+c(l, m_l, l_x, l_y, l_z) = 
+\\
+= \left\{
+\begin{aligned}
+&\frac{1}{2^l \cdot l!} \cdot \sqrt{ \frac{(2l_x)! \cdot (2l_y)! \cdot (2l_z)! \cdot l! \cdot (l - \ABS{m_l})!}{(2l)! \cdot l_x! \cdot l_y! \cdot l_z! \cdot (l + \ABS{m_l})!}} \, \times
+\\
+&\times \sum_{i=0}^{\frac{l-\ABS{m_l}}{2}} \binom{l}{i} \cdot \binom{i}{j} \cdot \frac{(-1)^i \cdot (2l-2i)!}{(l-\ABS{m_l}-2i)!} \cdot \sum_{k=0}^j \binom{j}{k} \cdot \binom{\ABS{m_l}}{l_x-2k} \cdot (-1)^{\pm \frac{\ABS{m_l}-l_x+2k}{2}}
+\\
+&\text{``$+$''}, \qquad m_l \geq 0
+\\
+&\text{``$-$''}, \qquad m_l < 0
+\\
+&j = \frac{l_x + l_y - \ABS{m_l}}{2}
+\\
+&0, \qquad j \notin \mathbb{Z} .
+\end{aligned}
+\right.
+\end{multline}
+%
+
+It follows from Eqs.~(\ref{eq:Z}),~(\ref{eq:G}),~(\ref{eq:tilde_G}):
+%
+\begin{equation}
+Z_{l_x l_y l_z \gamma}(\VEC{r}) = \frac{N_{l_x l_y l_z}^\gamma \cdot \tilde N(l, \gamma)}{N(l_x, l_y, l_z, \gamma)} \cdot c^{-1}(l, m_l, l_x, l_y, l_z) \cdot r^l \cdot e^{-\gamma r^2} \cdot Y_{l m_l}(\Omega) ,
+\end{equation}
+%
+and, therefore, the scalar product in Eq.~(\ref{eq:Pmbeta}) equals:
+%
+\begin{multline}
+\SCP{Y_{l (m-\beta)}(\Omega)}{Z_{l_x l_y l_z \gamma}(\VEC{r})}_\Omega = 
+\\
+= \frac{N_{l_x l_y l_z}^\gamma \cdot \tilde N(l, \gamma)}{N(l_x, l_y, l_z, \gamma)} \cdot c^{-1}(l, m-\beta, l_x, l_y, l_z) \cdot r^l \cdot e^{-\gamma r^2} \cdot \delta_{l_x+l_y+l_z, l} \cdot \delta_{m-\beta, m_l} .
+\label{eq:scalangl}
+\end{multline}
+%
+Substituting Eq.~(\ref{eq:scalangl}) into Eq.~(\ref{eq:Pmbeta}), the radial part of relativistic atomic wave function has the form:
+%
+\begin{equation}
+\left\{
+\begin{aligned}
+&P_{n l j}^{(m \beta)}(\VEC{r}) = r^{l+1} \sum_{\gamma} N(n, l, j, m, \beta, \gamma) \cdot e^{-\gamma r^2}
+\\
+&N(n, l, j, m, \beta, \gamma) = 
+\\
+&= \frac{1}{C^{j m}_{l (m-\beta) \frac{1}{2} \beta}} \sum_{l_x+l_y+l_z = l} S_{n l j m \beta}(l_x, l_y, l_z, \gamma) \cdot \frac{N_{l_x l_y l_z}^\gamma \cdot \tilde N(l, \gamma)}{N(l_x, l_y, l_z, \gamma)} \cdot c^{-1}(l, m-\beta, l_x, l_y, l_z) .
+\end{aligned}
+\right.
+\label{eq:radpart}
+\end{equation}
+%
+
+In order to get rid of spurious dependence of the radial part in Eq.~(\ref{eq:radpart}) on the $m$ and $\beta$ quantum numbers we average over them:
+%
+\begin{equation}
+P_{n l j}(\VEC{r}) = \frac{1}{j+\frac{1}{2}} \sum_m \frac{1}{2} \sum_\beta P_{n l j}^{(m \beta)}(\VEC{r}) .
+\end{equation}
+%
+The final expression looks as follows:
+%
+\begin{equation}
+\left\{
+\begin{aligned}
+&P_{n l j}(\VEC{r}) = r^{l+1} \sum_{\gamma} M(n, l, j, \gamma) \cdot e^{-\gamma r^2}
+\\
+&M(n, l, j, \gamma) = \frac{1}{j+\frac{1}{2}} \sum_m \frac{1}{2} \sum_\beta N(n, l, j, m, \beta, \gamma) .
+\end{aligned}
+\right.
+\end{equation}
+%
+The coefficients $M(n, l, j, \gamma)$ are stored in a file for the following use in the ElSA code. 
+
+\section{Approximations}
+
+\subsection{Contribution of the l quantum number}
+
+In relativistic calculations l is a bad quantum number and may be not known. However, we need to guess it from the Dirac output for the calculations done in Sec.~\ref{sec:main}. To do so, we express the norm of the atomic wave function given in the Dirac basis set:
+%
+\begin{equation}
+\left\{
+\begin{aligned}
+&\BRA{n l j m \beta} = \sum_{l_x l_y l_z \gamma} S_{n l j m \beta}(l_x, l_y, l_z, \gamma) \cdot Z_{l_x l_y l_z \gamma}(\VEC{r}) \cdot \BRA{\beta}
+\\
+&\SCP{n l j m \beta}{n l j m \beta}_\VEC{r} = \sum_{l_x^\prime l_y^\prime l_z^\prime \gamma^\prime} \sum_{l_x l_y l_z \gamma} S_{n l j m \beta}^\ast(l_x^\prime, l_y^\prime, l_z^\prime, \gamma^\prime) \cdot S_{n l j m \beta}(l_x, l_y, l_z, \gamma) \cdot \SCP{Z_{l_x^\prime l_y^\prime l_z^\prime \gamma^\prime}(\VEC{r})}{Z_{l_x l_y l_z \gamma}(\VEC{r})}_\VEC{r} .
+\end{aligned}
+\right.
+\end{equation}
+%
+As it may be seen, it does not actually depend on $l$. At the next step, we approximate this expression. We evaluate it only for diagonal elements and consider the contribution to the total norm comes from different $l$ values:
+%
+\begin{equation}
+\SCP{n l j m \beta}{n l j m \beta}_\textrm{Contrib.} \approx \sum_{l_x+l_y+l_z = l} \sum_\gamma \left| S_{n l j m \beta}(l_x, l_y, l_z, \gamma) \right|^2 \cdot F_{l_x l_y l_z} .
+\end{equation}
+%
+The $l$ quantum number giving the largest contribution to the total norm is the orbital quantum number attributed with the atomic orbital under consideration.
+
+\subsection{Deviation of norm}
+
+In the ElSA code we are interested only in the large components of the four-component relativistic atomic wave function. The normalization factor of the large component is changing due to relativistic effect and this change is the larger, the atomic number $Z$ is higher and for the same element is the most prominent for the $1s$ orbitals. Therefore, we approximate the allowed changes in wave function norm as follows:
+%
+\begin{equation}
+\Delta_\textrm{norm} = A \cdot \frac{Z}{n} + B,
+\end{equation}
+%
+where $n$ is a principal quantum number, the constants $A = 0.003$ and $B = 0.015$ are fitted.
+
+\subsection{Separation into active and inactive orbitals}
+
+We are interested only in the core, closed and inactive atomic orbitals. The separation into the valence and core orbitals is actually done in the Dirac input files. Nevertheless, some orbitals which are treated by Dirac as core orbitals still have almost degenerate orbital energies with the orbitals treated as valence states. Such semicore orbitals usually have bad normalization and ill defined $l$ orbital quantum numbers due to the coupling with the true open-shell valence states. Therefore, we introduced the energy threshold to additionally separate such semicore orbitals and not to process them. We attributed to the valence states all orbitals with orbital energies higher than:
+%
+\begin{equation}
+E_\textrm{thresh} = C \cdot Z ,
+\end{equation}
+%
+where the constant $C = -0.09$ hartree has been fitted.
+
+\bibliographystyle{/Users/campic/Papers/Biblio/physrev}
+\bibliography{/Users/campic/Papers/Biblio/biblio_eng}  
+\end{document}
