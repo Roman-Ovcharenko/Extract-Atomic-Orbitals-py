@@ -21,12 +21,13 @@ from others import dfactorial as dfact
 class Atom(object):
 
     def __init__(self, file_prop, bas, at_symb,  wrong_norm_orbitals, corr_norm_orbitals_symb,
-                 corr_norm_orbitals_val):
+                 corr_norm_orbitals_val, lls_pre, dev_ll_contrib, dev_ll_contrib_symb):
         self.file_prop = file_prop
         self.at_symb = at_symb
         self.bas = bas
         (energies, jjs, lls, mjs, nns, parities, 
-         self.num_orb_ger, self.num_orb_ung, self.num_orb, cfs_La, cfs_Lb) = self._get_param()
+         self.num_orb_ger, self.num_orb_ung, 
+         self.num_orb, cfs_La, cfs_Lb) = self._get_param(lls_pre, dev_ll_contrib)
         self.orbitals = []
         for iorb in range(self.num_orb):
             self.orbitals.append(orbital.Orbital(self.file_prop, energies[iorb], parities[iorb], 
@@ -34,6 +35,7 @@ class Atom(object):
                                                  self.num_orb_ger, self.at_symb, cfs_La[iorb],
                                                  cfs_Lb[iorb], nns[iorb], wrong_norm_orbitals,
                                                  corr_norm_orbitals_symb, corr_norm_orbitals_val))
+            dev_ll_contrib_symb.append(self.orbitals[iorb].orb_sym)
         orb_avg = self._average_over_mj()
         self.num_red_orb = len(orb_avg)
         self.red_orbitals = []
@@ -141,7 +143,7 @@ class Atom(object):
 ##################################################################################################
 # Read atomic parameters from the Dirac output file
 ##################################################################################################
-    def _get_param(self):
+    def _get_param(self, lls_pre, dev_ll_contrib):
         energies_ger_tmp = []
         energies_ung_tmp = []
         with open(self.file_prop) as f:
@@ -166,20 +168,32 @@ class Atom(object):
         cfs_La_ger = []
         cfs_Lb_ger = []
         lls_ger = []
+        lls_ger_pre = []
+        dev_ll_contrib_ger = []
         for iorb in range(num_orb_ger):
             La_ger, Lb_ger = self._get_coef(parities_ger[iorb], iorb, energies_ger[iorb])
             cfs_La_ger.append(La_ger)
             cfs_Lb_ger.append(Lb_ger)
-            lls_ger.append(self._get_ll(parities_ger[iorb], cfs_La_ger[iorb], cfs_Lb_ger[iorb]))
+            ll_cur, ll_pre, dev_ll_contrib_val = self._get_ll(parities_ger[iorb], cfs_La_ger[iorb],
+                                                              cfs_Lb_ger[iorb])
+            lls_ger.append(ll_cur)
+            lls_ger_pre.append(ll_pre)
+            dev_ll_contrib_ger.append(dev_ll_contrib_val)
 
         cfs_La_ung = []
         cfs_Lb_ung = []
         lls_ung = []
+        lls_ung_pre = []
+        dev_ll_contrib_ung = []
         for iorb in range(num_orb_ung):
             La_ung, Lb_ung = self._get_coef(parities_ung[iorb], iorb, energies_ung[iorb])
             cfs_La_ung.append(La_ung)
             cfs_Lb_ung.append(Lb_ung)
-            lls_ung.append(self._get_ll(parities_ung[iorb], cfs_La_ung[iorb], cfs_Lb_ung[iorb]))
+            ll_cur, ll_pre, dev_ll_contrib_val = self._get_ll(parities_ung[iorb], cfs_La_ung[iorb],
+                                                       cfs_Lb_ung[iorb])
+            lls_ung.append(ll_cur)
+            lls_ung_pre.append(ll_pre)
+            dev_ll_contrib_ung.append(dev_ll_contrib_val)
 
         jjs_ger = self._get_jj(mjs_ger, energies_ger, lls_ger)
         jjs_ung = self._get_jj(mjs_ung, energies_ung, lls_ung)
@@ -190,6 +204,10 @@ class Atom(object):
         num_orb = num_orb_ger + num_orb_ung
         jjs = jjs_ger + jjs_ung
         lls = lls_ger + lls_ung
+        lls_pre.extend(lls_ger_pre)
+        lls_pre.extend(lls_ung_pre)
+        dev_ll_contrib.extend(dev_ll_contrib_ger)
+        dev_ll_contrib.extend(dev_ll_contrib_ung)
         mjs = mjs_ger + mjs_ung
         nns = nns_ger + nns_ung
         self._assign_sign(mjs)
@@ -241,7 +259,7 @@ class Atom(object):
         return nns
 
 ##################################################################################################
-# Define the l orbital number based on the largest contribution to the norm of atomic orbital
+# Define the l orbital number basing on the largest contribution to the norm of atomic orbital
 ##################################################################################################
     def _get_ll(self, parity, cf_La, cf_Lb):
         if parity == "gerade":
@@ -249,17 +267,21 @@ class Atom(object):
         else:
             ll_list = [1, 3, 5]
         contrib_max = 0.0
+        contrib_pre = 0.0
+        ll_pre = -1
         ll_cur = -1
         for il, ll in enumerate(ll_list):
             contrib = 0.0
             for beta in [-0.5, 0.5]:
                 contrib = contrib + self._get_contrib(ll, beta, cf_La, cf_Lb)
             if contrib > contrib_max:
+                contrib_pre = contrib_max
+                ll_pre = ll_cur
                 contrib_max = contrib
                 ll_cur = ll
         if ll_cur < 0:
             raise Exception("ll_cur was not assigned")
-        return ll_cur
+        return ll_cur, ll_pre, 100 * contrib_pre / contrib_max
 
 ##################################################################################################
 # Estimate the contribution of coefficients with given ltot orbital quantum number to the total 

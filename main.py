@@ -68,6 +68,9 @@ print()
 wrong_norm_orbitals = []
 corr_norm_orbitals_symb = [] 
 corr_norm_orbitals_val = []
+lls_pre = [] 
+dev_ll_contrib = []
+dev_ll_contrib_symb = []
 tot_time_begin = time.time()
 for at_symb in root:
     time_begin = time.time()
@@ -81,7 +84,7 @@ for at_symb in root:
     bas = basis.Basis(file_prop, file_exp, at_symb)
     bas.printout()
     at = atom.Atom(file_prop, bas, at_symb, wrong_norm_orbitals, corr_norm_orbitals_symb,
-                   corr_norm_orbitals_val)
+                   corr_norm_orbitals_val, lls_pre, dev_ll_contrib, dev_ll_contrib_symb)
     at.printout()
     at.print_ElSA_file(file_ElSA)
     os.chdir("..")
@@ -99,6 +102,14 @@ index_max = corr_norm_orbitals_val.index(max_el)
 orb_max_el = corr_norm_orbitals_symb[index_max]
 print("The maximum relative deviation of the norm was observed for the {} orbitals and it is: {} %"
         .format(orb_max_el, max_el))
+print()
+max_dev_ll_val = max(dev_ll_contrib)
+index_max = dev_ll_contrib.index(max_dev_ll_val)
+orb_max_dev_ll = dev_ll_contrib_symb[index_max]
+ll_pre_val = lls_pre[index_max]
+print("Maximum relative deviation in the assignment of the l quantum number was found "
+      "for the {} orbital, equals to {:5.3f} % and corresponds to the l = {} orbital quantum number"
+      .format(orb_max_dev_ll, max_dev_ll_val, ll_pre_val))
 print()
 tot_time_end = time.time()
 others.print_time(tot_time_end - tot_time_begin)
