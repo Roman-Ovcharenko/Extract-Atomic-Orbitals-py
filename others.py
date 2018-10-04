@@ -21,28 +21,31 @@ def print_time(time):
 
 ##################################################################################################
 # 1D numerical integration of multiplication of the f(R) and g(R) functions represented on 
-# the R radial grid
+# the Rc radial grid
 ##################################################################################################
-def integrate(R, f, g):
-    Nr = len(R)
+def integrate(Rc, f, g):
+    Nr = len(Rc)
     if len(f) != Nr or len(g) != Nr:
-        raise Exception("f, g and dR have inconsistent size")
-    res = 0.0
-    for ir in range(0, Nr-2, 2):
-        a = R[ir]
-        b = R[ir+2]
-        fa = f[ir] * g[ir]
-        fb = f[ir+2] * g[ir+2]
-        fc = f[ir+1] * g[ir+1]
-        res = res + (fa + 4*fc + fb) * (b - a) / 6.0
-    if (Nr-1)%2 == 1:
-        a = R[Nr-2]
-        b = R[Nr-1]
-        fa = f[Nr-2] * g[Nr-2]
-        fb = f[Nr-1] * g[Nr-1]
-        res = res + (b - a) * (fa + fb) / 2.0
-    return res
+        raise Exception("f, g and Rc have inconsistent size")
 
+    res = 0.0
+    for ir in range(0, Nr-3, 2):
+        dRa = Rc[ir+1] - Rc[ir]  
+        dRb = Rc[ir+2] - Rc[ir+1]  
+        dRc = Rc[ir+3] - Rc[ir+2]  
+        ya = f[ir] * g[ir]
+        yb = f[ir+1] * g[ir+1]
+        yc = f[ir+2] * g[ir+2]
+        res = res + (ya*dRa + 4.0*yb*dRb + yc*dRc) / 3.0
+        irest = ir
+
+    for ir in range(irest+3, Nr):
+        dRa = Rc[ir] - Rc[ir-1]
+        ya = f[ir-1] * g[ir-1]
+        yb = f[ir] * g[ir]
+        res = res + (ya + yb) * dRa / 2.0
+
+    return res
 ##################################################################################################
 # Implementation of the double factorial 
 ##################################################################################################
